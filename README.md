@@ -38,7 +38,7 @@ This might be the name of the work, why you are commiting, anything really I jus
  
 And thats it, I will merge your changes if I feel they are correct
 
-
+If you already have the repository use `git pull` before switching branches
   
 
 ### About
