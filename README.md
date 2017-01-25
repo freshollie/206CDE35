@@ -29,12 +29,12 @@ Then when you want to make your own changes
  
 Make your changes. I expect documents to be submitted as PDFs in the correct folders
 
-   git add .
-   git commit -m "Your message"
+    git add .
+    git commit -m "Your message"
   
 This might be the name of the work, why you are commiting, anything really I just want to be able to see what you have changed.
 
-   git push --set-upstream origin issue-number
+    git push --set-upstream origin issue-number
  
 And thats it, I will merge your changes if I feel they are correct
 
