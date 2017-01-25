@@ -5,9 +5,9 @@
 - Oliver Bell @freshollie | Project Management, Programming
 - Zac Davis @zavies97 | Programming
 - Peter James @PeterG-James | Systems implimentation, databases
-- Kieran Goodson @KieranGoodson | Interface design, Storyboarding
+- Kieran Goodson @KieranGoodson | Design, Storyboarding
 - Joe Robinson @Joe-R97 | Databases, UML
-- Mising one.. But you will also be doing 
+- Liam Judge @Judgey19XX | Interface design, Video Editing
 
 ### Completeing work
 
