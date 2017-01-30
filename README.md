@@ -1,6 +1,9 @@
 # Real world project at coventry university
 ## 206CDE35
 
+### Package name
+    uk.ac.coventry.m206CDE.tutorial3.group5
+
 ### Members
 - Oliver Bell @freshollie | Project Management, Programming
 - Zac Davis @zavies97 | Programming
@@ -40,6 +43,10 @@ And thats it, I will merge your changes if I feel they are correct
 
 If you already have the repository use `git pull` before switching branches
   
+### Design
+As our aim is to do an android app, we will be conforming to the [lastest material design guildlines](https://material.io/guidelines/)
+
+Please read this if you are doing app design @KeiranGoodson @Judgey19XX
 
 ### About
 Our task is to solve a real world problem and we will be using this repository for keeping track of the project.

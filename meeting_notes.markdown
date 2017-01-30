@@ -10,4 +10,5 @@
 - More ideas brainstorm
 - Read handboook
 - Assigned work
-
+- Deciding what needs to be done this week
+- Assigned issue to members
