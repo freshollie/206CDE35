@@ -1,6 +1,9 @@
 # Real world project at coventry university
 ## 206CDE35
 
+
+### WE MEET 16:00-17:00 ON MONDAYS
+
 ### Package name
     uk.ac.coventry.m206CDE.tutorial3.group5
 
