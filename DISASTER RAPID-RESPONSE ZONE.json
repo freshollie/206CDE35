@@ -1,0 +1,218 @@
+
+[
+	{
+		"name":"Bottled water",
+		"price":"15",
+		"id":1,
+		"location":[	
+				"Tesco",
+				"Boots",
+				"Sainsburys"
+		]
+	}
+	{
+		"name":"Medication",
+		"price":"15",
+		"id":2,
+		"location":[
+				"Tesco",
+				"Pharmacy"
+				"Boots"
+		]
+	}
+	{
+		"name":"Consent Form",
+		"price":"0",
+		"id":3,
+		"location":[
+				"Hospital",
+				"GP",
+				"Pharmacy"
+		]
+	}
+	{
+		"name":"First Aid Kit",
+		"price":"15",
+		"id":4,
+		"location":[
+				"Tesco",
+				"Boots",
+				"Sainsburys"
+		]
+	}
+	{
+		"name":"Gloves",
+		"price":"5",
+		"id":5,
+		"location":[
+				"Boots",
+				"Tesco",
+				"Sainsburys"
+		]
+	}
+	{
+		"name":"Dust Mask",
+		"price":"5",
+		"id":6,
+		"location":[
+				"Boots",
+				"Sainsburys",
+				"Tesco"
+		]
+	}
+	{
+		"name":"Spare Glasses/Contact Lenses",
+		"price":"50",
+		"id":7,
+		"location":[
+				"Boots",
+				"Specsavers",
+				"Vision Express"
+		]
+	}
+	{
+		"name":"Whistle",
+		"price":"15",
+		"id":8,
+		"location":[
+				"Sports Direct",
+				"Blacks",
+				"Wilko"
+		]
+	}
+	{
+		"name":"Sturdy Shoes",
+		"price":"30",
+		"id":9,
+		"location":[
+				"Blacks",
+				"Sports Direct",
+				"Clarks"
+		]
+	}
+	{
+		"name":"Emergency Cash",
+		"price":"0",
+		"id":10,
+		"location":[
+				"ATM",
+				"Santander"
+		]
+	}
+	{
+		"name":"Road Maps",
+		"price":"10",
+		"id":11,
+		"location":[
+				"Petrol Station",
+				"Tesco"
+		]
+	}
+	{
+		"name":"Emergency Phone Numbers",
+		"price":"0",
+		"id":12,
+		"location":[]
+	}
+	{}
+]
+
+[
+	{
+		"name": "Avanlanche and Landslide",
+		"id":"101",
+		"items":[1,2],
+		"type":"Geological Disaster"
+	},
+	{
+		"name": "Earthquakes",
+		"id":"102",
+		"items":[1,2],
+		"type":"Geological Disaster"
+	}
+	{
+		"name": "Sink Holes",
+		"id":"103"
+		"items"[1,2]
+		"type":"Geological Disaster"
+	}
+						
+]
+
+	{"HydrologicalDisaster":[{"id":"201","VolcanicEruptions.":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"202","floods":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"203","limnicEruptions":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"204","tsunami":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+					
+						{"id":"201","volcanicEruption":"HouseholdDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"202","floods":"HouseholdDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"203","limnicEruptiuons":"HouseholdDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"204","tsunami":"PersonalDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						
+						{"id":"201","volcanicEruptions":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"202","floods":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"203","limnicEruptions":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"204","tsunami":"PersonalDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"}]
+						}
+						
+	{"MeteorologicalDisasters":[{"id":"301","Blizzards":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"302","tornados":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"303","heatWaves":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"304","hailstorm":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"305","thunderstorms":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"}
+						{"id":"306","droughts":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"}
+						{"id":"307","cyclonicStorms":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"}
+					
+						{"id":"301","Blizzards":"HouseholdDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"302","tornados":"HouseholdDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"303","heatWaves":"HouseholdDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"304","hailstorm":"HouseHoldDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"305","thunderstorms":"HouseHoldDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"306","droughts":"HouseHoldDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"307","cyclonicStorms":"HouseHoldDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						
+						{"id":"301","blizzards":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"302","tornados":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"303","heatWaves":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"},
+						{"id":"304","hailstorms":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"}
+						{"id":"305","thunderstorms":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"}
+						{"id":"306","droughts":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"}
+						{"id":"307","cyclonicStorms":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"}]
+						}
+						
+						
+	{"Wildfires":[{"id":"400":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+	
+						{"id":"400":"HouseHoldDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						
+						{"id":"400":"PetsDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"}]
+						}
+						
+						
+	{"SpaceDisasters":[{"id":"501","Impact eventsAndAirburst":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},	
+						{"id":"502","SolarFlare":"PersonalDisasterKits","price":"15", "location":"boots", "Tesco", "Sainsburys"},
+						
+						{"id":"501","Impact eventsAndAirburst":"houseHoldsDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},	
+						{"id":"502","SolarFlare":"houseHoldDisasterKits","price":"32", "location":"boots", "Tesco", "Sainsburys"},
+						
+						{"id":"501","Impact eventsAndAirburst":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"},	
+						{"id":"502","SolarFlare":"PetsDisasterKits","price":"18", "location":"boots", "Tesco", "Sainsburys"}]
+						}
+						
+						
+												
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
