@@ -228,97 +228,97 @@
 		},
 		{
 			"name": "Sink Holes",
-			"id":"103"
+			"id":"103",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22]
 			"type":"Geological Disaster"
 		},
 		{
 			"name": "Volcanic Eruptions",
-			"id":"201"
+			"id":"201",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Hydrological Disaster"
 		},	
 		{
 			"name": "Floods",
-			"id":"202"
+			"id":"202",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Hydrological Disaster"
 		},
 		{
 			"name": "Limnic Eruption",
-			"id":"203"
+			"id":"203",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Hydrological Disaster"
 		},
 		{
 			"name": "Tsunami",
-			"id":"204"
+			"id":"204",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Hydrological Disaster"
 		},
 		{
 			"name":"Blzzards",
-			"id":"301"
+			"id":"301",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Meteorological Disasters"
 		},
 		{
 			"name":"Tornados",
-			"id":"302"
+			"id":"302",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Meteorological Disasters"
 		},
 		{
 			"name":"Heat Wave",
-			"id":"303"
+			"id":"303",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Meteorological Disasters"
 		},
 		{
 			"name":"Hailstorm",
-			"id":"304"
+			"id":"304",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Meteorological Disasters"
 		},
 		{
 			"name":"Thunderstorms"
-			"id":"305"
+			"id":"305",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Meteorological Disasters"
 		},
 		{
 			"name":"Droughts",
-			"id":"306"
+			"id":"306",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Meteorological Disasters"
 		},
 		{
 			"name":"Cyclonic Storms",
-			"id":"307"
+			"id":"307",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Meteorological Disasters"
 		},
 		{
 			"name":"Wildfires",
-			"id":"401"
+			"id":"401",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Wildfires"
 		},
 		{
 			"name":"Impact Events",
-			"id":"501"
+			"id":"501",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Space Disaster"
 		},
 		{
 			"name":"Airbursts"
-			"id":"502"
+			"id":"502",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Space Disaster"
 		},
 		{
 			"name":"Solar Flare"
-			"id":"503"
+			"id":"503",
 			"items":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
 			"type":"Space Disaster"
 		}
