@@ -6,13 +6,16 @@ package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 public class Item {
     private String name;
-    private float price;
+    private String price;
     private int id;
+    private String[] locations;
 
-    public Item(int itemId, String itemName, float itemPrice) {
+    public Item(int itemId, String itemName, String itemPrice, String[] itemLocations) {
         name = itemName;
         id = itemId;
         price = itemPrice;
+        locations = itemLocations;
+
     }
 
     public String getName() {
@@ -23,7 +26,7 @@ public class Item {
         return id;
     }
 
-    public float getPrice() {
+    public String getPrice() {
         return price;
     }
 }
