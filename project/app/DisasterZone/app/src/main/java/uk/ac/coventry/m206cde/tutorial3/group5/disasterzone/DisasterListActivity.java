@@ -1,13 +1,16 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
+import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Toast;
 
-public class DisasterListActivity extends AppCompatActivity {
+public class DisasterListActivity extends AppCompatActivity implements
+        DisasterDatabase.DatabaseChangeListener{
 
     private String TAG = this.getClass().getSimpleName();
 
@@ -18,21 +21,39 @@ public class DisasterListActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        Log.v(TAG, "onCreate");
         setContentView(R.layout.activity_disaster_list);
 
-        setSupportActionBar(new Toolbar(this));
+        Toolbar toolbar = (Toolbar) findViewById(R.id.disaster_list_activity_toolbar);
+        setSupportActionBar(toolbar);
 
         disasterDatabase = DisasterDatabase.getInstance();
-
-        if (!disasterDatabase.isLoaded()) {
-            disasterDatabase.loadDatabase(this);
-        }
+        disasterDatabase.registerDatabaseChangeListener(this);
 
         disasterListAdapter = new DisasterListAdapter(this);
-        disasterListAdapter.setDisasters(disasterDatabase.getDisastersAsArray());
 
         disastersRecyclerView = (RecyclerView) findViewById(R.id.disaster_recycler_view);
         disastersRecyclerView.setAdapter(disasterListAdapter);
+        disastersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        if (!disasterDatabase.isLoaded()) {
+            disasterDatabase.loadDatabase(this);
+        } else {
+            onDatabaseChanged();
+        }
+    }
+
+    @Override
+    public void onDatabaseChanged() {
+        Log.v(TAG, "Disasters database changed");
+        disasterListAdapter.setDisasters(disasterDatabase.getDisastersAsArray());
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        disasterDatabase.unregisterDatabaseChangeListener(this);
     }
 
     public void onItemClicked(int itemId) {
