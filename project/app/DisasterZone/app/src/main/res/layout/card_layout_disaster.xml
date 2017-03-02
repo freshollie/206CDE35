@@ -9,13 +9,12 @@
     android:padding="5dp">
     <!-- A CardView that contains a TextView -->
     <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:id="@+id/disaster_card"
         android:layout_gravity="center"
         card_view:cardElevation="3dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        card_view:cardCornerRadius="4dp"
+        card_view:cardCornerRadius="2dp"
         android:clickable="true">
         <RelativeLayout
             android:layout_width="match_parent"

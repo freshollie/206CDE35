@@ -13,9 +13,62 @@
     tools:context=".DisasterInformationActivity"
     tools:showIn="@layout/activity_disaster_information">
     <android.support.v7.widget.CardView
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
-
+        android:layout_height="wrap_content"
+        android:id="@+id/disaster_information_card"
+        card_view:cardElevation="1dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/disaster_information_card_layout"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/disaster_information_about_title"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:id="@+id/disaster_description_title_text"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/disaster_description_text"
+                android:layout_alignStart="@+id/disaster_description_title_text"
+                android:layout_below="@+id/disaster_description_title_text"
+                android:text="test tersfadf ad ads iasjg f gois ois gsfdg" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/disaster_information_tips_title"
+                android:id="@+id/disaster_tips_title_text"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:layout_below="@+id/disaster_description_text"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/disaster_tips_layout"
+                android:layout_below="@+id/disaster_tips_title_text"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="@string/tip_bullet_point"/>
+            </LinearLayout>
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_items_button_text"
+        android:layout_below="@id/disaster_information_card"
+        android:id="@+id/view_items_button"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

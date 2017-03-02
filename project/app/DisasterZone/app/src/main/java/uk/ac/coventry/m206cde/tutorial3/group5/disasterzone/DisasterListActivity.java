@@ -68,4 +68,5 @@ public class DisasterListActivity extends AppCompatActivity implements
 
         startActivity(new Intent(this, DisasterInformationActivity.class));
     }
+
 }
