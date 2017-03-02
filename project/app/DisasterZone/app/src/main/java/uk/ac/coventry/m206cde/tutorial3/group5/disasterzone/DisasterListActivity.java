@@ -14,6 +14,7 @@ public class DisasterListActivity extends AppCompatActivity implements
 
     private String TAG = this.getClass().getSimpleName();
 
+    private DisasterZoneApplication application;
     private DisasterDatabase disasterDatabase;
     private DisasterListAdapter disasterListAdapter;
     private RecyclerView disastersRecyclerView;
@@ -28,7 +29,11 @@ public class DisasterListActivity extends AppCompatActivity implements
         Toolbar toolbar = (Toolbar) findViewById(R.id.disaster_list_activity_toolbar);
         setSupportActionBar(toolbar);
 
-        disasterDatabase = DisasterDatabase.getInstance();
+        application = DisasterZoneApplication.getInstance();
+        application.clearCurrentDisaster();
+        application.clearCurrentItem();
+
+        disasterDatabase = application.getDatabase();
         disasterDatabase.registerDatabaseChangeListener(this);
 
         disasterListAdapter = new DisasterListAdapter(this);

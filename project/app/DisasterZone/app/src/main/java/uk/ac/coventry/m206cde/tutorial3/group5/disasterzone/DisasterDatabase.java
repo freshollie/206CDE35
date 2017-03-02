@@ -31,7 +31,6 @@ public class DisasterDatabase {
     private SparseArray<Item> items = new SparseArray<>();
 
     // Keeps object as singleton that all activities can access with the same data
-    private static DisasterDatabase INSTANCE = new DisasterDatabase();
 
     // Don't perform another download if a download is already going;
     private boolean downloading = false;
@@ -40,14 +39,12 @@ public class DisasterDatabase {
     public interface DatabaseChangeListener {
         void onDatabaseChanged();
     }
+
     private ArrayList<DatabaseChangeListener> databaseChangeListeners = new ArrayList<>();
 
 
-    private DisasterDatabase() {
+    public DisasterDatabase() {
 
-    }
-    public static DisasterDatabase getInstance() {
-        return INSTANCE;
     }
 
     private SharedPreferences getSharedPreferences(Context context) {
