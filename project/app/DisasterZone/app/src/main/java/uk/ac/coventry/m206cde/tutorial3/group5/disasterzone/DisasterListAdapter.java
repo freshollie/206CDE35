@@ -1,6 +1,5 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,7 +55,7 @@ public class DisasterListAdapter extends RecyclerView.Adapter<DisasterListAdapte
         holder.disasterCardLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                disasterListActivity.onItemClicked(disasters[holder.getAdapterPosition()].getId());
+                disasterListActivity.onDisasterClicked(disasters[holder.getAdapterPosition()].getId());
             }
         });
     }
@@ -67,7 +66,6 @@ public class DisasterListAdapter extends RecyclerView.Adapter<DisasterListAdapte
     }
 
     public void setDisasters(Disaster[] newDisasters) {
-        Log.v(TAG, Arrays.toString(newDisasters));
         disasters = newDisasters;
         notifyDataSetChanged();
     }

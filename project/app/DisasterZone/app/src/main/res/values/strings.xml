@@ -5,4 +5,6 @@
     <string name="SAVED_DATABASE_JSON">saved_database_json</string>
 
     <string name="loading_database">Loading Database…</string>
+
+    <string name="title_activity_disaster_information">DisasterInformationActivity</string>
 </resources>

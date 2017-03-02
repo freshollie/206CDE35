@@ -1,5 +1,6 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
+import android.content.Intent;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -61,7 +62,10 @@ public class DisasterListActivity extends AppCompatActivity implements
         disasterDatabase.unregisterDatabaseChangeListener(this);
     }
 
-    public void onItemClicked(int itemId) {
-        Log.v(TAG, "Item clicked " + String.valueOf(itemId));
+    public void onDisasterClicked(int disasterId) {
+        Log.v(TAG, "Item clicked " + String.valueOf(disasterId));
+        application.setCurrentDisaster(disasterDatabase.getDisasterFromId(disasterId));
+
+        startActivity(new Intent(this, DisasterInformationActivity.class));
     }
 }
