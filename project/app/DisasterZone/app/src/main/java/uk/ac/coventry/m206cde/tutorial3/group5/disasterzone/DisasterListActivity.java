@@ -1,5 +1,6 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
+import android.content.Intent;
 import android.preference.PreferenceFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ public class DisasterListActivity extends AppCompatActivity implements
 
     private String TAG = this.getClass().getSimpleName();
 
+    private DisasterZoneApplication application;
     private DisasterDatabase disasterDatabase;
     private DisasterListAdapter disasterListAdapter;
     private RecyclerView disastersRecyclerView;
@@ -28,7 +30,11 @@ public class DisasterListActivity extends AppCompatActivity implements
         Toolbar toolbar = (Toolbar) findViewById(R.id.disaster_list_activity_toolbar);
         setSupportActionBar(toolbar);
 
-        disasterDatabase = DisasterDatabase.getInstance();
+        application = DisasterZoneApplication.getInstance();
+        application.clearCurrentDisaster();
+        application.clearCurrentItem();
+
+        disasterDatabase = application.getDatabase();
         disasterDatabase.registerDatabaseChangeListener(this);
 
         disasterListAdapter = new DisasterListAdapter(this);
@@ -56,7 +62,11 @@ public class DisasterListActivity extends AppCompatActivity implements
         disasterDatabase.unregisterDatabaseChangeListener(this);
     }
 
-    public void onItemClicked(int itemId) {
-        Log.v(TAG, "Item clicked " + String.valueOf(itemId));
+    public void onDisasterClicked(int disasterId) {
+        Log.v(TAG, "Item clicked " + String.valueOf(disasterId));
+        application.setCurrentDisaster(disasterDatabase.getDisasterFromId(disasterId));
+
+        startActivity(new Intent(this, DisasterInformationActivity.class));
     }
+
 }
