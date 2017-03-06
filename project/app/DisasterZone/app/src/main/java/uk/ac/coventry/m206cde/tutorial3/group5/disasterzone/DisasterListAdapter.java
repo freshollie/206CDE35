@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 /**
  * Created by freshollie on 2/27/17.
@@ -17,6 +18,7 @@ import java.util.Arrays;
 public class DisasterListAdapter extends RecyclerView.Adapter<DisasterListAdapter.DisasterHolder> {
 
     private static final String TAG = DisasterListAdapter.class.getSimpleName();
+    private HashMap<String, Integer> typeColours = new HashMap<>();
 
     private Disaster[] disasters = new Disaster[0];
     private DisasterListActivity disasterListActivity;
@@ -52,6 +54,10 @@ public class DisasterListAdapter extends RecyclerView.Adapter<DisasterListAdapte
     public void onBindViewHolder(final DisasterHolder holder, int position) {
         holder.disasterNameText.setText(disasters[position].getName());
         holder.disasterTypeText.setText(disasters[position].getType());
+
+
+        int colour = typeColours.getOrDefault(disasters[position].getType(), 0);
+
         holder.disasterCardLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
