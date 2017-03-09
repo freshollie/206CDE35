@@ -50,7 +50,7 @@ public class DisasterItemsActivity extends AppCompatActivity {
         LinearLayout itemLayout = (LinearLayout) findViewById(R.id.essentials_list);
         itemLayout.removeAllViews();
 
-        for (final Item item: database.getItemsForDisaster(disaster)) {
+        for (final Item item: disaster.getItems()) {
             CheckBox checkBox = new CheckBox(this);
             checkBox.setText(item.getName());
 

@@ -32,7 +32,7 @@ public class DisasterListActivity extends AppCompatActivity implements
 
         application = DisasterZoneApplication.getInstance();
         application.clearCurrentDisaster();
-        application.clearCurrentItem();
+        application.clearCurrentItems();
 
         disasterDatabase = application.getDatabase();
         disasterDatabase.registerDatabaseChangeListener(this);
