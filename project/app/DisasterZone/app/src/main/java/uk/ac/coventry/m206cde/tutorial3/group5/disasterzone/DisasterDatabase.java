@@ -168,7 +168,7 @@ public class DisasterDatabase {
 
                     String[] itemLocations = new String[jsonArrayItemLocations.length()];
 
-                    for (int j = 0; i < itemLocations.length; i++) {
+                    for (int j = 0; j < itemLocations.length; j++) {
                         // Each items location needs to be stored
                         itemLocations[j] = jsonArrayItemLocations.getString(j);
                     }
@@ -180,7 +180,6 @@ public class DisasterDatabase {
                             jsonItem.getString("price"),
                             itemLocations
                     );
-
                     items.put(item.getId(), item);
                 }
 
@@ -195,9 +194,9 @@ public class DisasterDatabase {
                     JSONArray jsonDisasterTips = jsonDisaster.getJSONArray("tips");
 
                     // Store the integer value of those items
-                    int[] disasterItems = new int[jsonDisasterItemIds.length()];
+                    Item[] disasterItems = new Item[jsonDisasterItemIds.length()];
                     for (int j = 0; j < jsonDisasterItemIds.length(); j++) {
-                        disasterItems[j] = jsonDisasterItemIds.getInt(j);
+                        disasterItems[j] = getItemFromId(jsonDisasterItemIds.getInt(j));
                     }
 
                     String[] disasterTips = new String[jsonDisasterTips.length()];
@@ -278,24 +277,6 @@ public class DisasterDatabase {
 
     public Item getItemFromId(int id) {
         return items.get(id);
-    }
-
-    public Item[] getItemsForDisaster(Disaster disaster) {
-        int[] itemIds = disaster.getItems();
-
-        Item[] itemArray = new Item[itemIds.length];
-
-        for(int i = 0; i < itemIds.length; i++) {
-            itemArray[i] = items.get(itemIds[i]);
-        }
-
-        return itemArray;
-    }
-
-    public Item[] getItemsForDisasterId(int id) {
-        Disaster disaster = getDisasterFromId(id);
-
-        return getItemsForDisaster(disaster);
     }
 
     public boolean isLoaded() {

@@ -6,13 +6,13 @@ package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 public class Disaster {
     private String name;
-    private int[] items;
+    private Item[] items;
     private String type;
     private String description;
     private int id;
     private String[] tips;
 
-    public Disaster(String disasterName, int[] disasterItems,
+    public Disaster(String disasterName, Item[] disasterItems,
                     String disasterType, int disasterId,
                     String disasterDescription, String[] disasterTips) {
         name = disasterName;
@@ -27,7 +27,7 @@ public class Disaster {
         return name;
     }
 
-    public int[] getItems() {
+    public Item[] getItems() {
         return items;
     }
 

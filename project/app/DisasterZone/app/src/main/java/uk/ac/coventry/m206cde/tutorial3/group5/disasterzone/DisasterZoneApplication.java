@@ -1,6 +1,7 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 import android.app.Application;
+import android.content.Intent;
 
 /**
  * Created by Freshollie on 02/03/2017.
@@ -10,7 +11,7 @@ public class DisasterZoneApplication extends Application{
     private DisasterDatabase disasterDatabase;
 
     private Disaster currentDisaster;
-    private Item currentItem;
+    private Item[] currentItems = new Item[0];
 
     private static DisasterZoneApplication INSTANCE;
 
@@ -28,20 +29,20 @@ public class DisasterZoneApplication extends Application{
         return currentDisaster;
     }
 
-    public Item getCurrentItem() {
-        return currentItem;
+    public Item[] getCurrentItems() {
+        return currentItems;
     }
 
     public void setCurrentDisaster(Disaster disaster) {
         currentDisaster = disaster;
     }
 
-    public void setCurrentItem(Item item) {
-        currentItem = item;
+    public void setCurrentItems(Item[] items) {
+        currentItems = items;
     }
 
-    public void clearCurrentItem() {
-        currentItem = null;
+    public void clearCurrentItems() {
+        currentItems = new Item[]{};
     }
 
     public void clearCurrentDisaster() {
@@ -55,5 +56,11 @@ public class DisasterZoneApplication extends Application{
     @Override
     public void onTerminate() {
         super.onTerminate();
+    }
+
+    public void goHome() {
+        Intent intent = new Intent(this, DisasterListActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
