@@ -14,10 +14,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class ItemsMapActivity extends FragmentActivity implements OnMapReadyCallback {
+public class ItemsMapActivity extends FragmentActivity implements OnMapReadyCallback,
+        ActivityCompat.OnRequestPermissionsResultCallback  {
 
     private GoogleMap map;
-    private boolean locationPermissionGranted
+    private boolean locationPermissionGranted;
+    private final int PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +58,6 @@ public class ItemsMapActivity extends FragmentActivity implements OnMapReadyCall
                 }
             }
         }
-        updateLocationUI();
     }
 
 
