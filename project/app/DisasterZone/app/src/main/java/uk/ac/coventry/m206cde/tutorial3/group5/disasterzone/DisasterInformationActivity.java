@@ -32,9 +32,7 @@ public class DisasterInformationActivity extends AppCompatActivity {
         disaster = application.getCurrentDisaster();
 
         if (disaster == null) { // No reason to be here
-            Intent intent = new Intent(this, DisasterListActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            application.goHome();
         } else {
             setupPage();
         }
