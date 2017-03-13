@@ -10,10 +10,10 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="uk.ac.coventry.m206cde.tutorial3.group5.disasterzone.HomeActivity"
-    tools:showIn="@layout/activity_home">
+    tools:context="uk.ac.coventry.m206cde.tutorial3.group5.disasterzone.DisasterCategoriesActivity"
+    tools:showIn="@layout/activity_disaster_categories">
     <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/type_recycler_view"/>
+        android:id="@+id/categories_recycler_view"/>
 </RelativeLayout>

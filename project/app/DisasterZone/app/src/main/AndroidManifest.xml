@@ -61,9 +61,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".HomeActivity"
-            android:label="@string/title_activity_home"
+            android:name=".DisasterCategoriesActivity"
+            android:label="@string/title_activity_categories"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

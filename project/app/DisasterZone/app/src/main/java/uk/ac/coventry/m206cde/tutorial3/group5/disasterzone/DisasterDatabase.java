@@ -28,8 +28,8 @@ public class DisasterDatabase {
 
     //Used to store the objects by their ids
     private SparseArray<Disaster> disasters = new SparseArray<>();
-    private SparseArray<DisasterItem> items = new SparseArray<>();
-    private SparseArray<Type>
+    private SparseArray<DisasterItem> disasterItems = new SparseArray<>();
+    private SparseArray<DisasterCategory> disasterCategories = new SparseArray<>();
 
     // Keeps object as singleton that all activities can access with the same data
 
@@ -159,10 +159,27 @@ public class DisasterDatabase {
                 JSONObject jsonDatabase = new JSONObject(stringJsonDatabase);
                 JSONArray jsonItems = jsonDatabase.getJSONArray("items"); // Get the items
                 JSONArray jsonDisasters = jsonDatabase.getJSONArray("disasters"); // get the disasters
+                JSONArray jsonCategories = jsonDatabase.getJSONArray("categories");
 
-                items = new SparseArray<>();
 
-                for (int i = 0; i < jsonItems.length(); i++) { // Go through all the items
+                disasterCategories = new SparseArray<>();
+
+                for (int i = 0; i < jsonCategories.length(); i++) { // Go through all the disasterItems
+                    JSONObject jsonCategory = jsonCategories.getJSONObject(i);
+
+                    // Create an object from that information
+                    DisasterCategory disasterCategory = new DisasterCategory(
+                            jsonCategory.getInt("id"),
+                            jsonCategory.getString("text"),
+                            jsonCategory.getString("image"),
+                            jsonCategory.getString("colour")
+                    );
+                    disasterCategories.put(disasterCategory.getId(), disasterCategory);
+                }
+
+                disasterItems = new SparseArray<>();
+
+                for (int i = 0; i < jsonItems.length(); i++) { // Go through all the disasterItems
                     JSONObject jsonItem = jsonItems.getJSONObject(i);
 
                     JSONArray jsonArrayItemLocations = jsonItem.getJSONArray("locations");
@@ -170,7 +187,7 @@ public class DisasterDatabase {
                     String[] itemLocations = new String[jsonArrayItemLocations.length()];
 
                     for (int j = 0; j < itemLocations.length; j++) {
-                        // Each items location needs to be stored
+                        // Each disasterItems location needs to be stored
                         itemLocations[j] = jsonArrayItemLocations.getString(j);
                     }
 
@@ -181,7 +198,7 @@ public class DisasterDatabase {
                             jsonItem.getString("price"),
                             itemLocations
                     );
-                    items.put(disasterItem.getId(), disasterItem);
+                    disasterItems.put(disasterItem.getId(), disasterItem);
                 }
 
 
@@ -194,7 +211,7 @@ public class DisasterDatabase {
 
                     JSONArray jsonDisasterTips = jsonDisaster.getJSONArray("tips");
 
-                    // Store the integer value of those items
+                    // Store the integer value of those disasterItems
                     DisasterItem[] disasterDisasterItems = new DisasterItem[jsonDisasterItemIds.length()];
                     for (int j = 0; j < jsonDisasterItemIds.length(); j++) {
                         disasterDisasterItems[j] = getItemFromId(jsonDisasterItemIds.getInt(j));
@@ -209,10 +226,11 @@ public class DisasterDatabase {
                             new Disaster(
                                     jsonDisaster.getString("name"),
                                     disasterDisasterItems,
-                                    jsonDisaster.getString("type"),
+                                    getDisasterCategory(jsonDisaster.getInt("category")),
                                     jsonDisaster.getInt("id"),
                                     jsonDisaster.getString("description"),
-                                    disasterTips
+                                    disasterTips,
+                                    jsonDisaster.getString("image")
                             )
                     );
                 }
@@ -232,6 +250,22 @@ public class DisasterDatabase {
         }
         Log.e(TAG, "Database format error");
         return false;
+    }
+
+    private DisasterCategory getDisasterCategory(int categoryId) {
+        return disasterCategories.get(categoryId);
+    }
+
+    public DisasterCategory[] getDisasterCategories() {
+        DisasterCategory[] arrayDisasterCategories =
+                new DisasterCategory[disasterCategories.size()];
+
+
+        for (int i = 0; i < disasterCategories.size(); i++) {
+            arrayDisasterCategories[i] = disasterCategories.valueAt(i);
+        }
+
+        return arrayDisasterCategories;
     }
 
     public boolean loadDatabase(Context context) {
@@ -277,11 +311,11 @@ public class DisasterDatabase {
     }
 
     public DisasterItem getItemFromId(int id) {
-        return items.get(id);
+        return disasterItems.get(id);
     }
 
     public boolean isLoaded() {
         return disasters != null && disasters.size() > 0
-                && items != null && items.size() > 0;
+                && disasterItems != null && disasterItems.size() > 0;
     }
 }

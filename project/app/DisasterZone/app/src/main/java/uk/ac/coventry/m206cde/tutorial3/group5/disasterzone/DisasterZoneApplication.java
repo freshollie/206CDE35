@@ -3,6 +3,8 @@ package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 import android.app.Application;
 import android.content.Intent;
 
+import java.lang.reflect.Field;
+
 /**
  * Created by Freshollie on 02/03/2017.
  */
@@ -59,8 +61,18 @@ public class DisasterZoneApplication extends Application{
     }
 
     public void goHome() {
-        Intent intent = new Intent(this, DisasterListActivity.class);
+        Intent intent = new Intent(this, DisasterCategoriesActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    public static int getResId(String resName, Class<?> c) {
+        try {
+            Field idField = c.getDeclaredField(resName);
+            return idField.getInt(idField);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return -1;
+        }
     }
 }
