@@ -16,13 +16,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".DisasterListActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".DisasterListActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".DisasterInformationActivity"
             android:label="@string/title_activity_disaster_information"
@@ -31,6 +26,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DisasterListActivity" />
         </activity>
+
         <activity
             android:name=".DisasterItemsActivity"
             android:label="@string/title_activity_disaster_items_activity"
@@ -40,6 +36,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.ac.coventry.m206cde.tutorial3.group5.disasterzone.DisasterInformationActivity" />
         </activity>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -58,6 +55,13 @@
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="uk.ac.coventry.m206cde.tutorial3.group5.disasterzone.DisasterInformationActivity" />
+        </activity>
+        <activity android:name=".SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
