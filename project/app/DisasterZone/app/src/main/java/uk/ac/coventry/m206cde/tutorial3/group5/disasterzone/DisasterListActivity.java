@@ -63,7 +63,7 @@ public class DisasterListActivity extends AppCompatActivity implements
     }
 
     public void onDisasterClicked(int disasterId) {
-        Log.v(TAG, "Item clicked " + String.valueOf(disasterId));
+        Log.v(TAG, "DisasterItem clicked " + String.valueOf(disasterId));
         application.setCurrentDisaster(disasterDatabase.getDisasterFromId(disasterId));
 
         startActivity(new Intent(this, DisasterInformationActivity.class));

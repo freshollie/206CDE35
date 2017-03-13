@@ -28,7 +28,8 @@ public class DisasterDatabase {
 
     //Used to store the objects by their ids
     private SparseArray<Disaster> disasters = new SparseArray<>();
-    private SparseArray<Item> items = new SparseArray<>();
+    private SparseArray<DisasterItem> items = new SparseArray<>();
+    private SparseArray<Type>
 
     // Keeps object as singleton that all activities can access with the same data
 
@@ -174,13 +175,13 @@ public class DisasterDatabase {
                     }
 
                     // Create an object from that information
-                    Item item = new Item(
+                    DisasterItem disasterItem = new DisasterItem(
                             jsonItem.getInt("id"),
                             jsonItem.getString("name"),
                             jsonItem.getString("price"),
                             itemLocations
                     );
-                    items.put(item.getId(), item);
+                    items.put(disasterItem.getId(), disasterItem);
                 }
 
 
@@ -194,9 +195,9 @@ public class DisasterDatabase {
                     JSONArray jsonDisasterTips = jsonDisaster.getJSONArray("tips");
 
                     // Store the integer value of those items
-                    Item[] disasterItems = new Item[jsonDisasterItemIds.length()];
+                    DisasterItem[] disasterDisasterItems = new DisasterItem[jsonDisasterItemIds.length()];
                     for (int j = 0; j < jsonDisasterItemIds.length(); j++) {
-                        disasterItems[j] = getItemFromId(jsonDisasterItemIds.getInt(j));
+                        disasterDisasterItems[j] = getItemFromId(jsonDisasterItemIds.getInt(j));
                     }
 
                     String[] disasterTips = new String[jsonDisasterTips.length()];
@@ -207,7 +208,7 @@ public class DisasterDatabase {
                     disasters.put(jsonDisaster.getInt("id"),
                             new Disaster(
                                     jsonDisaster.getString("name"),
-                                    disasterItems,
+                                    disasterDisasterItems,
                                     jsonDisaster.getString("type"),
                                     jsonDisaster.getInt("id"),
                                     jsonDisaster.getString("description"),
@@ -275,7 +276,7 @@ public class DisasterDatabase {
         return disasters.get(id);
     }
 
-    public Item getItemFromId(int id) {
+    public DisasterItem getItemFromId(int id) {
         return items.get(id);
     }
 

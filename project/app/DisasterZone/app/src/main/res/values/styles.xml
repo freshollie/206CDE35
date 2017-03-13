@@ -3,14 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <disasterItem name="colorPrimary">@color/colorPrimary</disasterItem>
+        <disasterItem name="colorPrimaryDark">@color/colorPrimaryDark</disasterItem>
+        <disasterItem name="colorAccent">@color/colorAccent</disasterItem>
     </style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+        <disasterItem name="windowActionBar">false</disasterItem>
+        <disasterItem name="windowNoTitle">true</disasterItem>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

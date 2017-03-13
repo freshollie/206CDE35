@@ -11,7 +11,7 @@ public class DisasterZoneApplication extends Application{
     private DisasterDatabase disasterDatabase;
 
     private Disaster currentDisaster;
-    private Item[] currentItems = new Item[0];
+    private DisasterItem[] currentDisasterItems = new DisasterItem[0];
 
     private static DisasterZoneApplication INSTANCE;
 
@@ -29,20 +29,20 @@ public class DisasterZoneApplication extends Application{
         return currentDisaster;
     }
 
-    public Item[] getCurrentItems() {
-        return currentItems;
+    public DisasterItem[] getCurrentDisasterItems() {
+        return currentDisasterItems;
     }
 
     public void setCurrentDisaster(Disaster disaster) {
         currentDisaster = disaster;
     }
 
-    public void setCurrentItems(Item[] items) {
-        currentItems = items;
+    public void setCurrentDisasterItems(DisasterItem[] disasterItems) {
+        currentDisasterItems = disasterItems;
     }
 
     public void clearCurrentItems() {
-        currentItems = new Item[]{};
+        currentDisasterItems = new DisasterItem[]{};
     }
 
     public void clearCurrentDisaster() {
