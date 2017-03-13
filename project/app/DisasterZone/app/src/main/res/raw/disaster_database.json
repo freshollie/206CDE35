@@ -4,27 +4,27 @@
 	{
 	  "text":"Geological Disasters",
 	  "id": 1,
-	  "colour": None,
+	  "colour": "",
 	},
 	{
 	  "text": "Hydrological Disasters",
 	  "id": 2,
-	  "colour": None,
+	  "colour": "",
 	},
 	{
 	  "text": "Meteorological Disasters",
 	  "id": 3,
-	  "colour": None,
+	  "colour": "",
 	},
 	{
 	  "text": "Wildfires",
 	  "id": 4,
-	  "colour": None,
+	  "colour": "",
 	},
 	{
 	  "text": "Space Disasters",
 	  "id":5,
-	  "colour": None,
+	  "colour": "",
 	}
   ],
 	
@@ -245,20 +245,15 @@
     {
       "name": "Avanlanche and Landslide",
       "id": 101,
-	  "image": None,
-      "description": "As the name suggests, Avalanches and Landslides occur when mud or snow moves underneath\
-	    rocks causing them to fall which results in massive damage and, sometimes, major injuries. \
-		Avalanches and Landslides often trap people under snow or rock, which means even if a person \
-		survives the initial impact, they are still in a lot of danger. Avalanches and Landslides are also \
-		hard to predict, meaning that they could occur at any time, but if you are more prepared, you have a much better chance of survival.",
+	  "image": "",
+      "description": "As the name suggests, Avalanches and Landslides occur when mud or snow moves underneath rocks causing them to fall which results in massive damage and, sometimes, major injuries. Avalanches and Landslides often trap people under snow or rock, which means even if a person survives the initial impact, they are still in a lot of danger. Avalanches and Landslides are also hard to predict, meaning that they could occur at any time, but if you are more prepared, you have a much better chance of survival.",
       "tips":[
 	    "Before you set off, be sure to take sensible equipment with you (e.g. warm winter clothes, a small shovel, avalanche airbags etc.",
 		"Always travel with at least one other partner. In the event of an Avalanche or a Landslide, make sure to yell to let them know where you are located.",
 		"Try to escape off of the slab of ice or rock that is falling, even if it means leaving your non-essential equipment behind.",
 		"Make sure you use your breathing equipment, it could save you from suffocating under the ice or debris.",
 		"Leave your backpack on. It can provide padding and prevent you from being crushed under the weight of the snow and ice.",
-		"If you are caught up in the snow or mud fall, try and roll like a log or swim through the debris. Once it comes to stop it will solidify.\
-		  It is essential to make space before the snow or debris stops.",
+		"If you are caught up in the snow or mud fall, try and roll like a log or swim through the debris. Once it comes to stop it will solidify. It is essential to make space before the snow or debris stops.",
 		"Keep a hand near your mouth to create an airspace, and wiggle your body to make even more space.",
 		"Try and extend your other hand out of the snow or debris. It will be impossible to do so once the snow or debris comes to a stop.",
 		"If you are trapped, activate your GPS and try to stay relaxed. You might not have room to move your fingers, but do not panic; help will be on the way."
@@ -292,25 +287,15 @@
     {
       "name": "Earthquakes",
       "id": 102,
-	  "image": None,
-      "description": "As you may already know from your high school Geogrpahy classes, Earthquakes are a result of \
-	    tectonic plates underground slipping, which can be followed by a series of aftershocks for days, weeks months or even years \
-		after the initial 'main shock'. Earthquakes are one of the deadliest natural disasters as they are unpredictable \
-		and cause wide spread damage and injury. Although there is little you can do to predict an Earthquake, you can prepare yourself \
-		for one using our provided survival tips and survival kit.",
+	  "image": "",
+      "description": "As you may already know from your high school Geogrpahy classes, Earthquakes are a result of tectonic plates underground slipping, which can be followed by a series of aftershocks for days, weeks months or even years after the initial 'main shock'. Earthquakes are one of the deadliest natural disasters as they are unpredictable and cause wide spread damage and injury. Although there is little you can do to predict an Earthquake, you can prepare yourself for one using our provided survival tips and survival kit.",
       "tips":[
-	    "Before an Earthquake, look around at the places you frequent and look for sturdy furniture you could hide under in the \
-		  event of an Earthquake. This could be a dining table at home, or a desk at your work place or school.",
-		"Cover your head and neck with your arms. If you are caught out in the open, try to find something sturdy you could \
-		  hide under.",
-		"Before an Earthquake, you could look for loose items in your home that could cause serious injurysuch as bookcases, \
-		  wardrobes, shelves etc. It would be a good idea for you to secure these items as they could fall and cause injury in the event of an Earthquake.",
-		"Keep an emergency stock of critical supplies in a safe place, such as food, water, medication, torches and important documents, \
-		  as well as anything else from the suggested survival kit.",
-		"Create an emergency plan for you and your family beforehand. This could be by creating a plan to communicate in the event of \
-		  an Earthquake to let your family know you are safe.",
-		"If you are driving during an Earthquake, stop and pull over until the Earthquake stops. Try to avoid tall buildings or powerlines that \
-		  could have been damaged by the Earthquake. Drive carefully and safely after the Earthquake, as traffic lights or road surfaces could have been damaged."
+	    "Before an Earthquake, look around at the places you frequent and look for sturdy furniture you could hide under in the event of an Earthquake. This could be a dining table at home, or a desk at your work place or school.",
+		"Cover your head and neck with your arms. If you are caught out in the open, try to find something sturdy you could hide under.",
+		"Before an Earthquake, you could look for loose items in your home that could cause serious injurysuch as bookcases, wardrobes, shelves etc. It would be a good idea for you to secure these items as they could fall and cause injury in the event of an Earthquake.",
+		"Keep an emergency stock of critical supplies in a safe place, such as food, water, medication, torches and important documents, as well as anything else from the suggested survival kit.",
+		"Create an emergency plan for you and your family beforehand. This could be by creating a plan to communicate in the event of an Earthquake to let your family know you are safe.",
+		"If you are driving during an Earthquake, stop and pull over until the Earthquake stops. Try to avoid tall buildings or powerlines that could have been damaged by the Earthquake. Drive carefully and safely after the Earthquake, as traffic lights or road surfaces could have been damaged."
 	  ],
       "items": [
         1,
@@ -341,7 +326,7 @@
     {
       "name": "Sink Holes",
       "id": 103,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -373,7 +358,7 @@
     {
       "name": "Volcanic Eruptions",
       "id": 201,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -405,7 +390,7 @@
     {
       "name": "Floods",
       "id": 202,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -437,7 +422,7 @@
     {
       "name": "Limnic Eruption",
       "id": 203,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -469,7 +454,7 @@
     {
       "name": "Tsunami",
       "id": 204,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -501,7 +486,7 @@
     {
       "name": "Blzzards",
       "id": 301,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -533,7 +518,7 @@
     {
       "name": "Tornados",
       "id": 302,
-	  "image": None
+	  "image": ""
       "description": "",
       "tips":[],
       "items": [
@@ -565,7 +550,7 @@
     {
       "name": "Heat Wave",
       "id": 303,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -597,7 +582,7 @@
     {
       "name": "Hailstorm",
       "id": 304,
-	  "Image": None,
+	  "Image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -629,7 +614,7 @@
     {
       "name": "Thunderstorms",
       "id": 305,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -661,7 +646,7 @@
     {
       "name": "Droughts",
       "id": 306,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -693,7 +678,7 @@
     {
       "name": "Cyclonic Storms",
       "id": 307,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -725,7 +710,7 @@
     {
       "name": "Wildfires",
       "id": 401,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -757,7 +742,7 @@
     {
       "name": "Impact Events",
       "id": 501,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -789,7 +774,7 @@
     {
       "name": "Airbursts",
       "id": 502,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
@@ -821,7 +806,7 @@
     {
       "name": "Solar Flare",
       "id": 503,
-	  "image": None,
+	  "image": "",
       "description": "",
       "tips":[],
       "items": [
