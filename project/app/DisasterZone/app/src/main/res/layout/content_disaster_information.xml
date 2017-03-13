@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_disaster_information"
@@ -12,63 +12,75 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".DisasterInformationActivity"
     tools:showIn="@layout/activity_disaster_information">
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/disaster_information_card"
-        card_view:cardElevation="2dp">
-        <RelativeLayout
+        android:layout_height="wrap_content">
+        <ImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/disaster_information_card_layout"
-            android:layout_margin="@dimen/activity_horizontal_margin">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/disaster_information_about_title"
-                android:textAppearance="?android:textAppearanceLarge"
-                android:id="@+id/disaster_description_title_text"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentStart="true"/>
-            <TextView
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@raw/earthquake"
+            android:id="@+id/disaster_information_image" />
+
+        <android.support.v7.widget.CardView
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/disaster_information_card"
+            card_view:cardElevation="2dp"
+            android:layout_below="@id/disaster_information_image">
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/disaster_description_text"
-                android:layout_alignStart="@+id/disaster_description_title_text"
-                android:layout_below="@+id/disaster_description_title_text"
-                android:text="test tersfadf ad ads iasjg f gois ois gsfdg" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="@string/disaster_information_tips_title"
-                android:id="@+id/disaster_tips_title_text"
-                android:textAppearance="?android:textAppearanceLarge"
-                android:layout_below="@+id/disaster_description_text"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/disaster_tips_layout"
-                android:layout_below="@+id/disaster_tips_title_text"
-                android:layout_marginStart="@dimen/activity_horizontal_margin"
-                android:layout_marginTop="5dp"
-                android:orientation="vertical">
+                android:id="@+id/disaster_information_card_layout"
+                android:layout_margin="@dimen/activity_horizontal_margin">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:text="@string/tip_bullet_point"/>
-            </LinearLayout>
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
+                    android:text="@string/disaster_information_about_title"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:id="@+id/disaster_description_title_text"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/disaster_description_text"
+                    android:layout_alignStart="@+id/disaster_description_title_text"
+                    android:layout_below="@+id/disaster_description_title_text"
+                    android:text="test tersfadf ad ads iasjg f gois ois gsfdg" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/disaster_information_tips_title"
+                    android:id="@+id/disaster_tips_title_text"
+                    android:textAppearance="?android:textAppearanceLarge"
+                    android:layout_below="@+id/disaster_description_text"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/disaster_tips_layout"
+                    android:layout_below="@+id/disaster_tips_title_text"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="5dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:text="@string/tip_bullet_point"/>
+                </LinearLayout>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/view_items_button_text"
-        android:layout_below="@id/disaster_information_card"
-        android:id="@+id/view_items_button"
-        android:layout_centerHorizontal="true"/>
-
-</RelativeLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/view_items_button_text"
+            android:layout_below="@id/disaster_information_card"
+            android:id="@+id/view_items_button"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+</ScrollView>

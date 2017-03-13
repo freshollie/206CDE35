@@ -15,4 +15,5 @@
     <string name="view_items_button_text">View Survival Essentials</string>
     <string name="title_activity_disaster_items_activity">DisasterItemsActivity</string>
     <string name="title_activity_item_map">Map</string>
+    <string name="title_activity_home">HomeActivity</string>
 </resources>
