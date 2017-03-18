@@ -1,6 +1,7 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 import android.graphics.drawable.Drawable;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -57,9 +58,14 @@ public class DisasterCategoriesAdapter extends RecyclerView.Adapter<DisasterCate
 
         String stringImageResource = categories[position].getImageResource();
         if (!stringImageResource.isEmpty()) {
-            if (!stringImageResource.contains(".")) {
-                int resource = DisasterZoneApplication.getResId(stringImageResource, Drawable.class);
-                if (resource != -1){
+            if (!stringImageResource.contains("http")) {
+                int resource =
+                        DisasterZoneApplication.getRawIdFromString(
+                                disasterCategoriesActivity,
+                                stringImageResource
+                        );
+
+                if (resource != 0) {
                     holder.categoryImage.setImageResource(resource);
                 }
             }

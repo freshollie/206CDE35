@@ -10,6 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class DisasterListActivity extends AppCompatActivity implements
         DisasterDatabase.DatabaseChangeListener{
 
@@ -19,6 +21,7 @@ public class DisasterListActivity extends AppCompatActivity implements
     private DisasterDatabase disasterDatabase;
     private DisasterListAdapter disasterListAdapter;
     private RecyclerView disastersRecyclerView;
+    private DisasterCategory filterCategory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,15 @@ public class DisasterListActivity extends AppCompatActivity implements
         application.clearCurrentDisaster();
         application.clearCurrentItems();
 
+        filterCategory = application.getFilterCategory();
+        if (filterCategory != null) {
+            getSupportActionBar().setTitle(filterCategory.getText());
+        } else {
+            getSupportActionBar().setTitle(getString(R.string.title_activity_disasters));
+        }
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         disasterDatabase = application.getDatabase();
         disasterDatabase.registerDatabaseChangeListener(this);
 
@@ -46,10 +58,25 @@ public class DisasterListActivity extends AppCompatActivity implements
         onDatabaseChanged();
     }
 
+    public Disaster[] filterDisasters(Disaster[] disasters) {
+        if (filterCategory == null) {
+            return disasters;
+        }
+
+        ArrayList<Disaster> filteredDisasters = new ArrayList<>();
+        for (Disaster disaster: disasters) {
+            if (disaster.getCategory() == filterCategory) {
+                filteredDisasters.add(disaster);
+            }
+        }
+
+        return filteredDisasters.toArray(new Disaster[filteredDisasters.size()]);
+    }
+
     @Override
     public void onDatabaseChanged() {
         Log.v(TAG, "Disasters database changed");
-        disasterListAdapter.setDisasters(disasterDatabase.getDisastersAsArray());
+        disasterListAdapter.setDisasters(filterDisasters(disasterDatabase.getDisastersAsArray()));
     }
 
     @Override

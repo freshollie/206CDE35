@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#ffa000</color>
+    <color name="colorPrimaryDark">#ef6c00</color>
+    <color name="colorAccent">#18ffff</color>
 
-    <color name="disasterType1">#7986cb</color>
-    <color name="disasterType2">#b71c1c</color>
-    <color name="disasterType3">#64dd17</color>
-    <color name="disasterType4">#ef6c00</color>
+    <color name="disasterType1">#7cb342</color>
+    <color name="disasterType2">#1976d2</color>
+    <color name="disasterType3">#bf360c</color>
+    <color name="disasterType4">#673ab7</color>
     <color name="disasterType5">#263238</color>
 </resources>

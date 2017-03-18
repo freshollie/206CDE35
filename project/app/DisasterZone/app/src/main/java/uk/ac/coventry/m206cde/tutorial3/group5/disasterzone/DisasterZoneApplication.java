@@ -1,6 +1,7 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
 
 import java.lang.reflect.Field;
@@ -11,6 +12,7 @@ import java.lang.reflect.Field;
 
 public class DisasterZoneApplication extends Application{
     private DisasterDatabase disasterDatabase;
+    private DisasterCategory filterCategory;
 
     private Disaster currentDisaster;
     private DisasterItem[] currentDisasterItems = new DisasterItem[0];
@@ -56,6 +58,14 @@ public class DisasterZoneApplication extends Application{
         return INSTANCE;
     }
 
+    public void setFilterCategory(DisasterCategory category) {
+        filterCategory = category;
+    }
+
+    public DisasterCategory getFilterCategory() {
+        return filterCategory;
+    }
+
     @Override
     public void onTerminate() {
         super.onTerminate();
@@ -67,13 +77,7 @@ public class DisasterZoneApplication extends Application{
         startActivity(intent);
     }
 
-    public static int getResId(String resName, Class<?> c) {
-        try {
-            Field idField = c.getDeclaredField(resName);
-            return idField.getInt(idField);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return -1;
-        }
+    public static int getRawIdFromString(Context context, String resName) {
+        return context.getResources().getIdentifier(resName, "raw", context.getPackageName());
     }
 }

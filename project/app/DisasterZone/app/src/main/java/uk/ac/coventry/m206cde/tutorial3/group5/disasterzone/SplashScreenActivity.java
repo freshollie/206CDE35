@@ -15,7 +15,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         findViewById(R.id.get_started_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((DisasterZoneApplication)getApplication()).goHome();
+                ((DisasterZoneApplication) getApplication()).goHome();
+                finish();
             }
         });
 

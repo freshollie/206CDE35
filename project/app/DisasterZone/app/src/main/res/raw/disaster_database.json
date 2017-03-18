@@ -3,32 +3,32 @@
     {
       "text": "Geological Disasters",
       "id": 1,
-      "colour": "",
-      "image": ""
+      "colour": "#7986cb",
+      "image": "earthquake"
     },
     {
       "text": "Hydrological Disasters",
       "id": 2,
-      "colour": "",
-      "image": ""
+      "colour": "#1976d2",
+      "image": "tsunami"
     },
     {
       "text": "Meteorological Disasters",
       "id": 3,
-      "colour": "",
-      "image": ""
+      "colour": "#bf360c",
+      "image": "hot_weather"
     },
     {
       "text": "Wildfires",
       "id": 4,
-      "colour": "",
-      "image": ""
+      "colour": "#263238",
+      "image": "fire"
     },
     {
       "text": "Space Disasters",
       "id": 5,
-      "colour": "",
-      "image": ""
+      "colour": "#673ab7",
+      "image": "meteor"
     }
   ],
   "items": [

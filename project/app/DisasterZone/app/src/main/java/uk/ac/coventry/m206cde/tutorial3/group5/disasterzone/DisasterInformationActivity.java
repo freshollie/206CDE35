@@ -52,7 +52,12 @@ public class DisasterInformationActivity extends AppCompatActivity {
         String stringResId = disaster.getImageResource();
         if (!stringResId.isEmpty()) {
             if (!stringResId.contains(".")) {
-                int resource = DisasterZoneApplication.getResId(stringResId, Drawable.class);
+                int resource =
+                        DisasterZoneApplication.getRawIdFromString(
+                                getApplicationContext(),
+                                stringResId
+                        );
+
                 if (resource != -1){
                     ((ImageView) findViewById(R.id.disaster_information_image)).setImageResource(resource);
                 }

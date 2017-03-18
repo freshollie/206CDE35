@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Disaster Zone</string>
 
-    <string name="PREFERENCES_KEY">uafyasdfsdfdfs</string>
+    <string name="PREFERENCES_KEY">adsfasdfjkj</string>
     <string name="SAVED_DATABASE_JSON">saved_database_json</string>
 
     <string name="loading_database">Loading Database…</string>
@@ -15,5 +15,6 @@
     <string name="view_items_button_text">View Survival Essentials</string>
     <string name="title_activity_disaster_items_activity">DisasterItemsActivity</string>
     <string name="title_activity_item_map">Map</string>
-    <string name="title_activity_categories">Categories</string>
+    <string name="title_activity_categories">Disaster Zone - Pick a category</string>
+    <string name="title_activity_disasters">Disasters</string>
 </resources>

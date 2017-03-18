@@ -260,7 +260,6 @@ public class DisasterDatabase {
     }
 
     public DisasterCategory[] getDisasterCategories() {
-        Log.v(TAG, "getDisasterCategories");
         DisasterCategory[] arrayDisasterCategories =
                 new DisasterCategory[disasterCategories.size()];
 
@@ -270,6 +269,10 @@ public class DisasterDatabase {
         }
 
         return arrayDisasterCategories;
+    }
+
+    public DisasterCategory getCategoryFromId(int categoryId) {
+        return disasterCategories.get(categoryId);
     }
 
     public boolean loadDatabase() {
