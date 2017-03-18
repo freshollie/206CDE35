@@ -1,7 +1,10 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 import android.app.Application;
+import android.content.Context;
 import android.content.Intent;
+
+import java.lang.reflect.Field;
 
 /**
  * Created by Freshollie on 02/03/2017.
@@ -9,15 +12,17 @@ import android.content.Intent;
 
 public class DisasterZoneApplication extends Application{
     private DisasterDatabase disasterDatabase;
+    private DisasterCategory filterCategory;
 
     private Disaster currentDisaster;
-    private Item[] currentItems = new Item[0];
+    private DisasterItem[] currentDisasterItems = new DisasterItem[0];
 
     private static DisasterZoneApplication INSTANCE;
 
     @Override
     public void onCreate() {
-        disasterDatabase = new DisasterDatabase();
+        super.onCreate();
+        disasterDatabase = new DisasterDatabase(getApplicationContext());
         INSTANCE = this;
     }
 
@@ -29,20 +34,20 @@ public class DisasterZoneApplication extends Application{
         return currentDisaster;
     }
 
-    public Item[] getCurrentItems() {
-        return currentItems;
+    public DisasterItem[] getCurrentDisasterItems() {
+        return currentDisasterItems;
     }
 
     public void setCurrentDisaster(Disaster disaster) {
         currentDisaster = disaster;
     }
 
-    public void setCurrentItems(Item[] items) {
-        currentItems = items;
+    public void setCurrentDisasterItems(DisasterItem[] disasterItems) {
+        currentDisasterItems = disasterItems;
     }
 
     public void clearCurrentItems() {
-        currentItems = new Item[]{};
+        currentDisasterItems = new DisasterItem[]{};
     }
 
     public void clearCurrentDisaster() {
@@ -53,14 +58,26 @@ public class DisasterZoneApplication extends Application{
         return INSTANCE;
     }
 
+    public void setFilterCategory(DisasterCategory category) {
+        filterCategory = category;
+    }
+
+    public DisasterCategory getFilterCategory() {
+        return filterCategory;
+    }
+
     @Override
     public void onTerminate() {
         super.onTerminate();
     }
 
     public void goHome() {
-        Intent intent = new Intent(this, DisasterListActivity.class);
+        Intent intent = new Intent(this, DisasterCategoriesActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    public static int getRawIdFromString(Context context, String resName) {
+        return context.getResources().getIdentifier(resName, "raw", context.getPackageName());
     }
 }

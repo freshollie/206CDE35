@@ -6,33 +6,35 @@ package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 public class Disaster {
     private String name;
-    private Item[] items;
-    private String type;
+    private DisasterItem[] disasterItems;
+    private DisasterCategory category;
     private String description;
     private int id;
     private String[] tips;
+    private String imageResource;
 
-    public Disaster(String disasterName, Item[] disasterItems,
-                    String disasterType, int disasterId,
-                    String disasterDescription, String[] disasterTips) {
+    public Disaster(String disasterName, DisasterItem[] disasterDisasterItems,
+                    DisasterCategory disasterCategory, int disasterId,
+                    String disasterDescription, String[] disasterTips, String disasterImageResource) {
         name = disasterName;
-        items = disasterItems;
-        type = disasterType;
+        this.disasterItems = disasterDisasterItems;
+        category = disasterCategory;
         id = disasterId;
         description = disasterDescription;
         tips = disasterTips;
+        imageResource = disasterImageResource;
     }
 
     public String getName() {
         return name;
     }
 
-    public Item[] getItems() {
-        return items;
+    public DisasterItem[] getDisasterItems() {
+        return disasterItems;
     }
 
-    public String getType() {
-        return type;
+    public DisasterCategory getCategory() {
+        return category;
     }
 
     public int getId() {
@@ -45,5 +47,9 @@ public class Disaster {
 
     public String[] getTips() {
         return tips;
+    }
+
+    public String getImageResource() {
+        return imageResource;
     }
 }

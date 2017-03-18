@@ -26,9 +26,12 @@ public class DisasterDatabase {
 
     private static final String TAG = DisasterDatabase.class.getSimpleName();
 
+    private Context context;
+
     //Used to store the objects by their ids
     private SparseArray<Disaster> disasters = new SparseArray<>();
-    private SparseArray<Item> items = new SparseArray<>();
+    private SparseArray<DisasterItem> disasterItems = new SparseArray<>();
+    private SparseArray<DisasterCategory> disasterCategories = new SparseArray<>();
 
     // Keeps object as singleton that all activities can access with the same data
 
@@ -43,11 +46,12 @@ public class DisasterDatabase {
     private ArrayList<DatabaseChangeListener> databaseChangeListeners = new ArrayList<>();
 
 
-    public DisasterDatabase() {
-
+    public DisasterDatabase(Context context) {
+        this.context = context;
+        loadDatabase();
     }
 
-    private SharedPreferences getSharedPreferences(Context context) {
+    private SharedPreferences getSharedPreferences() {
         return context.getSharedPreferences(
                         context.getString(R.string.PREFERENCES_KEY),
                         Context.MODE_PRIVATE
@@ -60,11 +64,11 @@ public class DisasterDatabase {
      *
      * If shared preferences doesn't have the string stored it will save it after loading from raw.
      *
-     * @param context
+     * @param forceRaw Load the default database if no other shored DB
      * @return
      */
-    private String getStringJsonDatabase(Context context, boolean forceRaw) {
-        SharedPreferences sharedPreferences = getSharedPreferences(context);
+    private String getStringJsonDatabase(boolean forceRaw) {
+        SharedPreferences sharedPreferences = getSharedPreferences();
 
         String stringJsonDatabase = sharedPreferences.getString(
                 context.getString(R.string.SAVED_DATABASE_JSON),
@@ -90,24 +94,24 @@ public class DisasterDatabase {
 
             stringJsonDatabase = writer.toString();
 
-            saveNewJsonDatabase(context, stringJsonDatabase);
+            saveNewJsonDatabase(stringJsonDatabase);
         }
 
         return stringJsonDatabase;
     }
 
     // Default is to not force to load raw
-    private String getStringJsonDatabase(Context context) {
-        return getStringJsonDatabase(context, false);
+    private String getStringJsonDatabase() {
+        return getStringJsonDatabase(false);
     }
 
     /**
      * Saves the given json string to SharedPreferences
-     * @param context
+     *
      * @param newJsonDatabase
      */
-    private void saveNewJsonDatabase(Context context, String newJsonDatabase) {
-        SharedPreferences sharedPreferences = getSharedPreferences(context);
+    private void saveNewJsonDatabase(String newJsonDatabase) {
+        SharedPreferences sharedPreferences = getSharedPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(context.getString(R.string.SAVED_DATABASE_JSON), newJsonDatabase);
@@ -121,7 +125,7 @@ public class DisasterDatabase {
      * @param context
      */
     public void downloadDatabase(final Context context) {
-        final String localStringJsonDatabase = getStringJsonDatabase(context);
+        final String localStringJsonDatabase = getStringJsonDatabase();
 
         new DatabaseDownloaderService().execute(new DatabaseDownloaderService.DownloadCallback() {
             @Override
@@ -132,11 +136,11 @@ public class DisasterDatabase {
             @Override
             public void onComplete(String newStringJsonDatabase) {
                 if (!newStringJsonDatabase.equals(localStringJsonDatabase)) {
-                    saveNewJsonDatabase(context, newStringJsonDatabase);
+                    saveNewJsonDatabase(newStringJsonDatabase);
 
-                    if (!loadDatabase(context, false)) {
+                    if (!loadDatabase(false)) {
                         // if the new database is not valid we need to set it back to the old
-                        saveNewJsonDatabase(context, localStringJsonDatabase);
+                        saveNewJsonDatabase(localStringJsonDatabase);
                     }
                 }
             }
@@ -146,11 +150,11 @@ public class DisasterDatabase {
     /**
      * Loads the locally stored database into objects;
      *
-     * @param context
      * @return true if loaded properly false if not
      */
-    public boolean loadDatabase(Context context, boolean tryRaw) {
-        String stringJsonDatabase = getStringJsonDatabase(context);
+    public boolean loadDatabase(boolean tryRaw) {
+        Log.v(TAG, "Loading database");
+        String stringJsonDatabase = getStringJsonDatabase();
 
         // Process of converting that json string into objects
         for (int x = 0; x < 2; x++) {
@@ -158,10 +162,27 @@ public class DisasterDatabase {
                 JSONObject jsonDatabase = new JSONObject(stringJsonDatabase);
                 JSONArray jsonItems = jsonDatabase.getJSONArray("items"); // Get the items
                 JSONArray jsonDisasters = jsonDatabase.getJSONArray("disasters"); // get the disasters
+                JSONArray jsonCategories = jsonDatabase.getJSONArray("categories");
 
-                items = new SparseArray<>();
 
-                for (int i = 0; i < jsonItems.length(); i++) { // Go through all the items
+                disasterCategories = new SparseArray<>();
+
+                for (int i = 0; i < jsonCategories.length(); i++) { // Go through all the disasterItems
+                    JSONObject jsonCategory = jsonCategories.getJSONObject(i);
+
+                    // Create an object from that information
+                    DisasterCategory disasterCategory = new DisasterCategory(
+                            jsonCategory.getInt("id"),
+                            jsonCategory.getString("text"),
+                            jsonCategory.getString("image"),
+                            jsonCategory.getString("colour")
+                    );
+                    disasterCategories.put(disasterCategory.getId(), disasterCategory);
+                }
+
+                disasterItems = new SparseArray<>();
+
+                for (int i = 0; i < jsonItems.length(); i++) { // Go through all the disasterItems
                     JSONObject jsonItem = jsonItems.getJSONObject(i);
 
                     JSONArray jsonArrayItemLocations = jsonItem.getJSONArray("locations");
@@ -169,18 +190,18 @@ public class DisasterDatabase {
                     String[] itemLocations = new String[jsonArrayItemLocations.length()];
 
                     for (int j = 0; j < itemLocations.length; j++) {
-                        // Each items location needs to be stored
+                        // Each disasterItems location needs to be stored
                         itemLocations[j] = jsonArrayItemLocations.getString(j);
                     }
 
                     // Create an object from that information
-                    Item item = new Item(
+                    DisasterItem disasterItem = new DisasterItem(
                             jsonItem.getInt("id"),
                             jsonItem.getString("name"),
                             jsonItem.getString("price"),
                             itemLocations
                     );
-                    items.put(item.getId(), item);
+                    disasterItems.put(disasterItem.getId(), disasterItem);
                 }
 
 
@@ -193,10 +214,10 @@ public class DisasterDatabase {
 
                     JSONArray jsonDisasterTips = jsonDisaster.getJSONArray("tips");
 
-                    // Store the integer value of those items
-                    Item[] disasterItems = new Item[jsonDisasterItemIds.length()];
+                    // Store the integer value of those disasterItems
+                    DisasterItem[] disasterDisasterItems = new DisasterItem[jsonDisasterItemIds.length()];
                     for (int j = 0; j < jsonDisasterItemIds.length(); j++) {
-                        disasterItems[j] = getItemFromId(jsonDisasterItemIds.getInt(j));
+                        disasterDisasterItems[j] = getItemFromId(jsonDisasterItemIds.getInt(j));
                     }
 
                     String[] disasterTips = new String[jsonDisasterTips.length()];
@@ -207,11 +228,12 @@ public class DisasterDatabase {
                     disasters.put(jsonDisaster.getInt("id"),
                             new Disaster(
                                     jsonDisaster.getString("name"),
-                                    disasterItems,
-                                    jsonDisaster.getString("type"),
+                                    disasterDisasterItems,
+                                    getDisasterCategory(jsonDisaster.getInt("category")),
                                     jsonDisaster.getInt("id"),
                                     jsonDisaster.getString("description"),
-                                    disasterTips
+                                    disasterTips,
+                                    jsonDisaster.getString("image")
                             )
                     );
                 }
@@ -223,7 +245,7 @@ public class DisasterDatabase {
                 e.printStackTrace();
                 Log.e(TAG, "Error loading current database, trying the default database");
                 if (tryRaw) {
-                    stringJsonDatabase = getStringJsonDatabase(context, true);
+                    stringJsonDatabase = getStringJsonDatabase(true);
                 } else {
                     break;
                 }
@@ -233,8 +255,28 @@ public class DisasterDatabase {
         return false;
     }
 
-    public boolean loadDatabase(Context context) {
-        return loadDatabase(context, true);
+    private DisasterCategory getDisasterCategory(int categoryId) {
+        return disasterCategories.get(categoryId);
+    }
+
+    public DisasterCategory[] getDisasterCategories() {
+        DisasterCategory[] arrayDisasterCategories =
+                new DisasterCategory[disasterCategories.size()];
+
+
+        for (int i = 0; i < disasterCategories.size(); i++) {
+            arrayDisasterCategories[i] = disasterCategories.valueAt(i);
+        }
+
+        return arrayDisasterCategories;
+    }
+
+    public DisasterCategory getCategoryFromId(int categoryId) {
+        return disasterCategories.get(categoryId);
+    }
+
+    public boolean loadDatabase() {
+        return loadDatabase(true);
     }
 
     /**
@@ -275,12 +317,7 @@ public class DisasterDatabase {
         return disasters.get(id);
     }
 
-    public Item getItemFromId(int id) {
-        return items.get(id);
-    }
-
-    public boolean isLoaded() {
-        return disasters != null && disasters.size() > 0
-                && items != null && items.size() > 0;
+    public DisasterItem getItemFromId(int id) {
+        return disasterItems.get(id);
     }
 }

@@ -3,6 +3,7 @@ package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 public class SplashScreenActivity extends AppCompatActivity {
@@ -14,7 +15,8 @@ public class SplashScreenActivity extends AppCompatActivity {
         findViewById(R.id.get_started_button).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), DisasterListActivity.class));
+                ((DisasterZoneApplication) getApplication()).goHome();
+                finish();
             }
         });
 

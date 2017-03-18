@@ -1,11 +1,14 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -45,6 +48,22 @@ public class DisasterInformationActivity extends AppCompatActivity {
 
     public void setupPage() {
         getSupportActionBar().setTitle(disaster.getName());
+
+        String stringResId = disaster.getImageResource();
+        if (!stringResId.isEmpty()) {
+            if (!stringResId.contains(".")) {
+                int resource =
+                        DisasterZoneApplication.getRawIdFromString(
+                                getApplicationContext(),
+                                stringResId
+                        );
+
+                if (resource != -1){
+                    ((ImageView) findViewById(R.id.disaster_information_image)).setImageResource(resource);
+                }
+            }
+        }
+
 
         ((TextView) findViewById(R.id.disaster_description_text))
                 .setText(disaster.getDescription());

@@ -16,7 +16,7 @@ public class DisasterItemsActivity extends AppCompatActivity {
     private DisasterZoneApplication application;
     private Disaster disaster;
     private DisasterDatabase database;
-    private ArrayList<Item> checkedItems = new ArrayList<>();
+    private ArrayList<DisasterItem> checkedDisasterItems = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +41,8 @@ public class DisasterItemsActivity extends AppCompatActivity {
     }
 
     public void showMap() {
-        Item[] items = checkedItems.toArray(new Item[checkedItems.size()]);
-        application.setCurrentItems(items);
+        DisasterItem[] disasterItems = checkedDisasterItems.toArray(new DisasterItem[checkedDisasterItems.size()]);
+        application.setCurrentDisasterItems(disasterItems);
         startActivity(new Intent(this, ItemsMapActivity.class));
     }
 
@@ -50,17 +50,17 @@ public class DisasterItemsActivity extends AppCompatActivity {
         LinearLayout itemLayout = (LinearLayout) findViewById(R.id.essentials_list);
         itemLayout.removeAllViews();
 
-        for (final Item item: disaster.getItems()) {
+        for (final DisasterItem disasterItem : disaster.getDisasterItems()) {
             CheckBox checkBox = new CheckBox(this);
-            checkBox.setText(item.getName());
+            checkBox.setText(disasterItem.getName());
 
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                     if (isChecked) {
-                        checkedItems.add(item);
+                        checkedDisasterItems.add(disasterItem);
                     } else {
-                        checkedItems.remove(item);
+                        checkedDisasterItems.remove(disasterItem);
                     }
                 }
             });

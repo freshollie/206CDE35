@@ -1,33 +1,36 @@
 {
-
-  "Categories": [
-	{
-	  "text":"Geological Disasters",
-	  "id": 1,
-	  "colour": "",
-	},
-	{
-	  "text": "Hydrological Disasters",
-	  "id": 2,
-	  "colour": "",
-	},
-	{
-	  "text": "Meteorological Disasters",
-	  "id": 3,
-	  "colour": "",
-	},
-	{
-	  "text": "Wildfires",
-	  "id": 4,
-	  "colour": "",
-	},
-	{
-	  "text": "Space Disasters",
-	  "id":5,
-	  "colour": "",
-	}
+  "categories": [
+    {
+      "text": "Geological Disasters",
+      "id": 1,
+      "colour": "#7986cb",
+      "image": "earthquake"
+    },
+    {
+      "text": "Hydrological Disasters",
+      "id": 2,
+      "colour": "#1976d2",
+      "image": "tsunami"
+    },
+    {
+      "text": "Meteorological Disasters",
+      "id": 3,
+      "colour": "#bf360c",
+      "image": "hot_weather"
+    },
+    {
+      "text": "Wildfires",
+      "id": 4,
+      "colour": "#263238",
+      "image": "fire"
+    },
+    {
+      "text": "Space Disasters",
+      "id": 5,
+      "colour": "#673ab7",
+      "image": "meteor"
+    }
   ],
-	
   "items": [
     {
       "name": "Bottled water",
@@ -240,24 +243,23 @@
       "locations": []
     }
   ],
-  
   "disasters": [
     {
       "name": "Avanlanche and Landslide",
       "id": 101,
-	  "image": "",
+      "image": "",
       "description": "As the name suggests, Avalanches and Landslides occur when mud or snow moves underneath rocks causing them to fall which results in massive damage and, sometimes, major injuries. Avalanches and Landslides often trap people under snow or rock, which means even if a person survives the initial impact, they are still in a lot of danger. Avalanches and Landslides are also hard to predict, meaning that they could occur at any time, but if you are more prepared, you have a much better chance of survival.",
-      "tips":[
-	    "Before you set off, be sure to take sensible equipment with you (e.g. warm winter clothes, a small shovel, avalanche airbags etc.",
-		"Always travel with at least one other partner. In the event of an Avalanche or a Landslide, make sure to yell to let them know where you are located.",
-		"Try to escape off of the slab of ice or rock that is falling, even if it means leaving your non-essential equipment behind.",
-		"Make sure you use your breathing equipment, it could save you from suffocating under the ice or debris.",
-		"Leave your backpack on. It can provide padding and prevent you from being crushed under the weight of the snow and ice.",
-		"If you are caught up in the snow or mud fall, try and roll like a log or swim through the debris. Once it comes to stop it will solidify. It is essential to make space before the snow or debris stops.",
-		"Keep a hand near your mouth to create an airspace, and wiggle your body to make even more space.",
-		"Try and extend your other hand out of the snow or debris. It will be impossible to do so once the snow or debris comes to a stop.",
-		"If you are trapped, activate your GPS and try to stay relaxed. You might not have room to move your fingers, but do not panic; help will be on the way."
-	  ],
+      "tips": [
+        "Before you set off, be sure to take sensible equipment with you (e.g. warm winter clothes, a small shovel, avalanche airbags etc.",
+        "Always travel with at least one other partner. In the event of an Avalanche or a Landslide, make sure to yell to let them know where you are located.",
+        "Try to escape off of the slab of ice or rock that is falling, even if it means leaving your non-essential equipment behind.",
+        "Make sure you use your breathing equipment, it could save you from suffocating under the ice or debris.",
+        "Leave your backpack on. It can provide padding and prevent you from being crushed under the weight of the snow and ice.",
+        "If you are caught up in the snow or mud fall, try and roll like a log or swim through the debris. Once it comes to stop it will solidify. It is essential to make space before the snow or debris stops.",
+        "Keep a hand near your mouth to create an airspace, and wiggle your body to make even more space.",
+        "Try and extend your other hand out of the snow or debris. It will be impossible to do so once the snow or debris comes to a stop.",
+        "If you are trapped, activate your GPS and try to stay relaxed. You might not have room to move your fingers, but do not panic; help will be on the way."
+      ],
       "items": [
         1,
         2,
@@ -282,21 +284,21 @@
         21,
         22
       ],
-      "type": 1,
+      "category": 1
     },
     {
       "name": "Earthquakes",
       "id": 102,
-	  "image": "",
-      "description": "As you may already know from your high school Geogrpahy classes, Earthquakes are a result of tectonic plates underground slipping, which can be followed by a series of aftershocks for days, weeks months or even years after the initial 'main shock'. Earthquakes are one of the deadliest natural disasters as they are unpredictable and cause wide spread damage and injury. Although there is little you can do to predict an Earthquake, you can prepare yourself for one using our provided survival tips and survival kit.",
-      "tips":[
-	    "Before an Earthquake, look around at the places you frequent and look for sturdy furniture you could hide under in the event of an Earthquake. This could be a dining table at home, or a desk at your work place or school.",
-		"Cover your head and neck with your arms. If you are caught out in the open, try to find something sturdy you could hide under.",
-		"Before an Earthquake, you could look for loose items in your home that could cause serious injurysuch as bookcases, wardrobes, shelves etc. It would be a good idea for you to secure these items as they could fall and cause injury in the event of an Earthquake.",
-		"Keep an emergency stock of critical supplies in a safe place, such as food, water, medication, torches and important documents, as well as anything else from the suggested survival kit.",
-		"Create an emergency plan for you and your family beforehand. This could be by creating a plan to communicate in the event of an Earthquake to let your family know you are safe.",
-		"If you are driving during an Earthquake, stop and pull over until the Earthquake stops. Try to avoid tall buildings or powerlines that could have been damaged by the Earthquake. Drive carefully and safely after the Earthquake, as traffic lights or road surfaces could have been damaged."
-	  ],
+      "image": "",
+      "description": "As you may already know from your high school Geogrpahy classes, Earthquakes are a result of  tectonic plates underground slipping, which can be followed by a series of aftershocks for days, weeks months or even years after the initial 'main shock'. Earthquakes are one of the deadliest natural disasters as they are unpredictable and cause wide spread damage and injury. Although there is little you can do to predict an Earthquake, you can prepare yourself for one using our provided survival tips and survival kit.",
+      "tips": [
+        "Before an Earthquake, look around at the places you frequent and look for sturdy furniture you could hide under in the event of an Earthquake. This could be a dining table at home, or a desk at your work place or school.",
+        "Cover your head and neck with your arms. If you are caught out in the open, try to find something sturdy you could hide under.",
+        "Before an Earthquake, you could look for loose items in your home that could cause serious injurysuch as bookcases, wardrobes, shelves etc. It would be a good idea for you to secure these items as they could fall and cause injury in the event of an Earthquake.",
+        "Keep an emergency stock of critical supplies in a safe place, such as food, water, medication, torches and important documents, as well as anything else from the suggested survival kit.",
+        "Create an emergency plan for you and your family beforehand. This could be by creating a plan to communicate in the event of an Earthquake to let your family know you are safe.",
+        "If you are driving during an Earthquake, stop and pull over until the Earthquake stops. Try to avoid tall buildings or powerlines that could have been damaged by the Earthquake. Drive carefully and safely after the Earthquake, as traffic lights or road surfaces could have been damaged."
+      ],
       "items": [
         1,
         2,
@@ -321,7 +323,7 @@
         21,
         22
       ],
-      "type": 1,
+      "category": 1
     },
     {
       "name": "Sink Holes",
@@ -330,8 +332,8 @@
       "description": "Sinkholes usually occur where the groundbelow is made up of limestone rock, or another carbonate type rock, salt beds or other easy to dissolve rock types. This makes it incredibly difficult to predict where a sinkhole will occur as, from above the ground, everything would look okay, whereas below ground, water would dissolve the rocks through various methods, resulting in massive caves and caverns being formed. A sinkhole occurs when the rocks below a structure can no longer support the weight causing the ground to collapse swallowing anything above it. Due to the unpredictable nature of sinkholes, no one can pinpoint where or when a sinkhole will occur, but by reading our survival tips you can be better prepared in the event of one.",
       "tips":[
 	    "Check if you live in an area with a history of mining. Sinkholes are common along old mining routes. If you do live in one of these areas, contact your local council immediately to check if your area is prone to sinkholes, as they can fill in the mining routes below your house.",
-		"If you are noticing smaller sinkholes around your home, please contact the council immediately. This can be an indicator for a much bigger sinkhole in the future."
-		"If you live in an older house, make sure your foundations are stable. Modern building standards are much safer and could help protect you and your family in the event of a sinkhole."
+		"If you are noticing smaller sinkholes around your home, please contact the council immediately. This can be an indicator for a much bigger sinkhole in the future.",
+		"If you live in an older house, make sure your foundations are stable. Modern building standards are much safer and could help protect you and your family in the event of a sinkhole.",
 		"In the event of a sinkhole, stay away from the edges as these could crumble under weight.",
 		"Do not enter the sinkhole under any circumstances, even to try and save valuables such as your car. Remember a car can be replaced but your life cannot.",
 		"Do not attempt to fill sinkholes yourself, as this can be very dangerous. For example, a heavy cement mixer near the whole can cause the edges to collapse.",
@@ -361,7 +363,7 @@
         21,
         22
       ],
-      "type": 1
+      "category": 1
     },
     {
       "name": "Volcanic Eruptions",
@@ -408,7 +410,7 @@
         21,
         22
       ],
-      "type": 2
+      "category": 2
     },
     {
       "name": "Floods",
@@ -448,7 +450,7 @@
         21,
         22
       ],
-      "type": 2
+      "category": 2
     },
     {
       "name": "Limnic Eruption",
@@ -483,7 +485,7 @@
         21,
         22
       ],
-      "type": 2
+      "category": 2
     },
     {
       "name": "Tsunami",
@@ -525,14 +527,14 @@
         21,
         22
       ],
-      "type": 2
+      "category": 2
     },
     {
       "name": "Blzzards",
       "id": 301,
 	  "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -557,14 +559,14 @@
         21,
         22
       ],
-      "type": 3
+      "category": 3
     },
     {
       "name": "Tornados",
       "id": 302,
-	  "image": ""
+	  "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -589,14 +591,14 @@
         21,
         22
       ],
-      "type": 3
+      "category": 3
     },
     {
       "name": "Heat Wave",
       "id": 303,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -621,14 +623,14 @@
         21,
         22
       ],
-      "type": 3
+      "category": 3
     },
     {
       "name": "Hailstorm",
       "id": 304,
-	  "Image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -653,14 +655,14 @@
         21,
         22
       ],
-      "type": 3
+      "category": 3
     },
     {
       "name": "Thunderstorms",
       "id": 305,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -685,14 +687,14 @@
         21,
         22
       ],
-      "type": 3
+      "category": 3
     },
     {
       "name": "Droughts",
       "id": 306,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -717,14 +719,14 @@
         21,
         22
       ],
-      "type": 3
+      "category": 3
     },
     {
       "name": "Cyclonic Storms",
       "id": 307,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -749,14 +751,14 @@
         21,
         22
       ],
-      "type": 3
+      "category": 3
     },
     {
       "name": "Wildfires",
       "id": 401,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -781,14 +783,14 @@
         21,
         22
       ],
-      "type": 4,
+      "category": 4
     },
     {
       "name": "Impact Events",
       "id": 501,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -813,14 +815,14 @@
         21,
         22
       ],
-      "type": 5
+      "category": 5
     },
     {
       "name": "Airbursts",
       "id": 502,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -845,14 +847,14 @@
         21,
         22
       ],
-      "type": 5
+      "category": 5
     },
     {
       "name": "Solar Flare",
       "id": 503,
-	  "image": "",
+      "image": "",
       "description": "",
-      "tips":[],
+      "tips": [],
       "items": [
         1,
         2,
@@ -877,7 +879,7 @@
         21,
         22
       ],
-      "type": 5
+      "category": 5
     }
   ]
 }
