@@ -23,13 +23,11 @@ public class DisasterListAdapter extends RecyclerView.Adapter<DisasterListAdapte
 
     public static class DisasterHolder extends RecyclerView.ViewHolder {
         public TextView disasterNameText;
-        public TextView disasterTypeText;
         public RelativeLayout disasterCardLayout;
 
         public DisasterHolder(View v) {
             super(v);
             disasterNameText = (TextView) v.findViewById(R.id.disaster_name);
-            disasterTypeText = (TextView) v.findViewById(R.id.disaster_type);
             disasterCardLayout = (RelativeLayout) v.findViewById(R.id.disaster_card_layout);
         }
     }
@@ -51,9 +49,6 @@ public class DisasterListAdapter extends RecyclerView.Adapter<DisasterListAdapte
     @Override
     public void onBindViewHolder(final DisasterHolder holder, int position) {
         holder.disasterNameText.setText(disasters[position].getName());
-
-
-        int colour = typeColours.getOrDefault(disasters[position].getCategory(), 0);
 
         holder.disasterCardLayout.setOnClickListener(new View.OnClickListener() {
             @Override

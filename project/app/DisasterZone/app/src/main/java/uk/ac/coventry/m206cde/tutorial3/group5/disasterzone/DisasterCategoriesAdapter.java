@@ -3,6 +3,7 @@ package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,7 +45,7 @@ public class DisasterCategoriesAdapter extends RecyclerView.Adapter<DisasterCate
     public CategoryHolder onCreateViewHolder(ViewGroup parent,
                                              int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_layout_disaster, parent, false);
+                .inflate(R.layout.card_layout_category, parent, false);
 
         CategoryHolder vh = new CategoryHolder(v);
         return vh;

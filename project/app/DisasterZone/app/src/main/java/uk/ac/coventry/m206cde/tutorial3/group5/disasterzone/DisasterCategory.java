@@ -33,6 +33,10 @@ public class DisasterCategory {
     }
 
     public int getColour() {
-        return Color.parseColor(colour);
+        if (!colour.isEmpty()) {
+            return Color.parseColor(colour);
+        } else {
+            return -1;
+        }
     }
 }

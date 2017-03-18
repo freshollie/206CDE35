@@ -43,11 +43,7 @@ public class DisasterListActivity extends AppCompatActivity implements
         disastersRecyclerView.setAdapter(disasterListAdapter);
         disastersRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        if (!disasterDatabase.isLoaded()) {
-            disasterDatabase.loadDatabase(this);
-        } else {
-            onDatabaseChanged();
-        }
+        onDatabaseChanged();
     }
 
     @Override

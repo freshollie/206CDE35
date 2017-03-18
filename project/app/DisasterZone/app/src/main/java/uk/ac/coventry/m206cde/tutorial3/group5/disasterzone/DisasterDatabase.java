@@ -26,6 +26,8 @@ public class DisasterDatabase {
 
     private static final String TAG = DisasterDatabase.class.getSimpleName();
 
+    private Context context;
+
     //Used to store the objects by their ids
     private SparseArray<Disaster> disasters = new SparseArray<>();
     private SparseArray<DisasterItem> disasterItems = new SparseArray<>();
@@ -44,11 +46,12 @@ public class DisasterDatabase {
     private ArrayList<DatabaseChangeListener> databaseChangeListeners = new ArrayList<>();
 
 
-    public DisasterDatabase() {
-
+    public DisasterDatabase(Context context) {
+        this.context = context;
+        loadDatabase();
     }
 
-    private SharedPreferences getSharedPreferences(Context context) {
+    private SharedPreferences getSharedPreferences() {
         return context.getSharedPreferences(
                         context.getString(R.string.PREFERENCES_KEY),
                         Context.MODE_PRIVATE
@@ -61,11 +64,11 @@ public class DisasterDatabase {
      *
      * If shared preferences doesn't have the string stored it will save it after loading from raw.
      *
-     * @param context
+     * @param forceRaw Load the default database if no other shored DB
      * @return
      */
-    private String getStringJsonDatabase(Context context, boolean forceRaw) {
-        SharedPreferences sharedPreferences = getSharedPreferences(context);
+    private String getStringJsonDatabase(boolean forceRaw) {
+        SharedPreferences sharedPreferences = getSharedPreferences();
 
         String stringJsonDatabase = sharedPreferences.getString(
                 context.getString(R.string.SAVED_DATABASE_JSON),
@@ -91,24 +94,24 @@ public class DisasterDatabase {
 
             stringJsonDatabase = writer.toString();
 
-            saveNewJsonDatabase(context, stringJsonDatabase);
+            saveNewJsonDatabase(stringJsonDatabase);
         }
 
         return stringJsonDatabase;
     }
 
     // Default is to not force to load raw
-    private String getStringJsonDatabase(Context context) {
-        return getStringJsonDatabase(context, false);
+    private String getStringJsonDatabase() {
+        return getStringJsonDatabase(false);
     }
 
     /**
      * Saves the given json string to SharedPreferences
-     * @param context
+     *
      * @param newJsonDatabase
      */
-    private void saveNewJsonDatabase(Context context, String newJsonDatabase) {
-        SharedPreferences sharedPreferences = getSharedPreferences(context);
+    private void saveNewJsonDatabase(String newJsonDatabase) {
+        SharedPreferences sharedPreferences = getSharedPreferences();
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(context.getString(R.string.SAVED_DATABASE_JSON), newJsonDatabase);
@@ -122,7 +125,7 @@ public class DisasterDatabase {
      * @param context
      */
     public void downloadDatabase(final Context context) {
-        final String localStringJsonDatabase = getStringJsonDatabase(context);
+        final String localStringJsonDatabase = getStringJsonDatabase();
 
         new DatabaseDownloaderService().execute(new DatabaseDownloaderService.DownloadCallback() {
             @Override
@@ -133,11 +136,11 @@ public class DisasterDatabase {
             @Override
             public void onComplete(String newStringJsonDatabase) {
                 if (!newStringJsonDatabase.equals(localStringJsonDatabase)) {
-                    saveNewJsonDatabase(context, newStringJsonDatabase);
+                    saveNewJsonDatabase(newStringJsonDatabase);
 
-                    if (!loadDatabase(context, false)) {
+                    if (!loadDatabase(false)) {
                         // if the new database is not valid we need to set it back to the old
-                        saveNewJsonDatabase(context, localStringJsonDatabase);
+                        saveNewJsonDatabase(localStringJsonDatabase);
                     }
                 }
             }
@@ -147,11 +150,11 @@ public class DisasterDatabase {
     /**
      * Loads the locally stored database into objects;
      *
-     * @param context
      * @return true if loaded properly false if not
      */
-    public boolean loadDatabase(Context context, boolean tryRaw) {
-        String stringJsonDatabase = getStringJsonDatabase(context);
+    public boolean loadDatabase(boolean tryRaw) {
+        Log.v(TAG, "Loading database");
+        String stringJsonDatabase = getStringJsonDatabase();
 
         // Process of converting that json string into objects
         for (int x = 0; x < 2; x++) {
@@ -242,7 +245,7 @@ public class DisasterDatabase {
                 e.printStackTrace();
                 Log.e(TAG, "Error loading current database, trying the default database");
                 if (tryRaw) {
-                    stringJsonDatabase = getStringJsonDatabase(context, true);
+                    stringJsonDatabase = getStringJsonDatabase(true);
                 } else {
                     break;
                 }
@@ -257,6 +260,7 @@ public class DisasterDatabase {
     }
 
     public DisasterCategory[] getDisasterCategories() {
+        Log.v(TAG, "getDisasterCategories");
         DisasterCategory[] arrayDisasterCategories =
                 new DisasterCategory[disasterCategories.size()];
 
@@ -268,8 +272,8 @@ public class DisasterDatabase {
         return arrayDisasterCategories;
     }
 
-    public boolean loadDatabase(Context context) {
-        return loadDatabase(context, true);
+    public boolean loadDatabase() {
+        return loadDatabase(true);
     }
 
     /**
@@ -312,10 +316,5 @@ public class DisasterDatabase {
 
     public DisasterItem getItemFromId(int id) {
         return disasterItems.get(id);
-    }
-
-    public boolean isLoaded() {
-        return disasters != null && disasters.size() > 0
-                && disasterItems != null && disasterItems.size() > 0;
     }
 }

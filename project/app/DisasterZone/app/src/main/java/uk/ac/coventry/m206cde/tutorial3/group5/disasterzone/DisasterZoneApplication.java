@@ -19,7 +19,8 @@ public class DisasterZoneApplication extends Application{
 
     @Override
     public void onCreate() {
-        disasterDatabase = new DisasterDatabase();
+        super.onCreate();
+        disasterDatabase = new DisasterDatabase(getApplicationContext());
         INSTANCE = this;
     }
 

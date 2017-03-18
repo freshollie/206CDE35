@@ -5,9 +5,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 
 public class DisasterCategoriesActivity extends AppCompatActivity {
     private DisasterZoneApplication application;
+    private static String TAG = DisasterCategoriesActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +36,7 @@ public class DisasterCategoriesActivity extends AppCompatActivity {
     }
 
     public void onCategoryClicked(int categoryId) {
-
+        Log.v(TAG, "Category selected: " + String.valueOf(categoryId));
     }
 
 }
