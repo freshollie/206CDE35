@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Disaster Zone</string>
 
-    <string name="PREFERENCES_KEY">ksdjfjksdf</string>
+    <string name="PREFERENCES_KEY">uafyasdfsdfdfs</string>
     <string name="SAVED_DATABASE_JSON">saved_database_json</string>
 
     <string name="loading_database">Loading Database…</string>

@@ -328,9 +328,17 @@
     {
       "name": "Sink Holes",
       "id": 103,
-      "image": "",
-      "description": "",
-      "tips": [],
+	  "image": "",
+      "description": "Sinkholes usually occur where the groundbelow is made up of limestone rock, or another carbonate type rock, salt beds or other easy to dissolve rock types. This makes it incredibly difficult to predict where a sinkhole will occur as, from above the ground, everything would look okay, whereas below ground, water would dissolve the rocks through various methods, resulting in massive caves and caverns being formed. A sinkhole occurs when the rocks below a structure can no longer support the weight causing the ground to collapse swallowing anything above it. Due to the unpredictable nature of sinkholes, no one can pinpoint where or when a sinkhole will occur, but by reading our survival tips you can be better prepared in the event of one.",
+      "tips":[
+	    "Check if you live in an area with a history of mining. Sinkholes are common along old mining routes. If you do live in one of these areas, contact your local council immediately to check if your area is prone to sinkholes, as they can fill in the mining routes below your house.",
+		"If you are noticing smaller sinkholes around your home, please contact the council immediately. This can be an indicator for a much bigger sinkhole in the future.",
+		"If you live in an older house, make sure your foundations are stable. Modern building standards are much safer and could help protect you and your family in the event of a sinkhole.",
+		"In the event of a sinkhole, stay away from the edges as these could crumble under weight.",
+		"Do not enter the sinkhole under any circumstances, even to try and save valuables such as your car. Remember a car can be replaced but your life cannot.",
+		"Do not attempt to fill sinkholes yourself, as this can be very dangerous. For example, a heavy cement mixer near the whole can cause the edges to collapse.",
+		"In the event of a sinkhole near your home, evacuate immediately, even if it looks like your home wasn't damaged, the foundations beneath could be."
+	  ],
       "items": [
         1,
         2,
@@ -360,9 +368,24 @@
     {
       "name": "Volcanic Eruptions",
       "id": 201,
-      "image": "",
-      "description": "",
-      "tips": [],
+	  "image": "",
+      "description": "A volcano occurs when the Earths' crust ruptures, allowing red hot lava, volcanic ash and noxious gases to escape from a magme chamber below. Although you may think lava is the number one killer, you would be wrong as most people are killed from inhaling the immense amount of volcanic ash released into the atmosphere. Aside from the immediate danger of a volcano, they can also cause major disruption to planes as the volcanic ash is carried by the wind to diferent areas aroudn the world. After reading our survival tips below, we hope you will be more prepared in the event of a volcano, where being prepared could be the difference between living and dying.",
+      "tips":[
+	    "Build an emergency suplly kit with items such as non-perishable food, water, a battery powered or hand crank radio, torches and batteries. Keep this kit in a safe place that you can reach easily.",
+		"You may also want to keep an emergency supply kit or bugout bag in your car in case you or your family need to evacuate.",
+		"Make an emergency plan for you and your family. This will be helpful in the event of an emergency, as it will let you know if your family is safe and where you can meet up.",
+		"Follow the evacuation instructions set up by your local authorities. This is important as it will move you out of the danger zone of the volcano as fast as possible.",
+		"Keep an eye out for mudflows that can occur due to heavy rain causd by the volcano. These mostly occur near streams. if you must cross a bridge, look upstream. If you can see a mudflow approaching, do not cross the bridge. remember, mudflows can move faster than you can walk or run.",
+		"Avoid areas such aslow-lands or river valleys.",
+		"Help your neighbours and people who need more assistance, such as disabled people, infants and the elderly.",
+		"If you have infants, elderly people or people with respiratory issuesm stay inside until government officials say that it is safe. You can do this by listening to your radio. The ash will make it very hard to breath and could damage their lungs.",
+		"Use a dust mask or damp cloth to help you breathe.",
+		"Stay inside until the dust settles, unless your roof is in danger of collapsing.",
+		"Close doors, windows or ventilation that could bring ash into the house.",
+		"Clear heavy ash from flat or low pitcher roofs and rain gutters.",
+		"Avoid running your motor vehicle. The motor can stir up volcanic ash that will clog and damage the moving parts.",
+		"If you absolutely need to drive, keep your speed to 35MPH or slower."
+	  ],
       "items": [
         1,
         2,
@@ -392,9 +415,17 @@
     {
       "name": "Floods",
       "id": 202,
-      "image": "",
-      "description": "",
-      "tips": [],
+	  "image": "",
+      "description": "Floods usually occur when there is a lot more rainfall than previously thought, causing bodies of water to rise quickly which can result in flash floods. This is a massive problem here in the UK, but the problem exists all over the world, with floods causing masive water damage to homes and businesses. Unlike many other natural disasters, there are steps you can take to help limit the damage of a flood. See our survival tips for more information.",
+      "tips":[
+	    "Move to higher ground and avoid areas more susceptible to flooding, such as the bottom of hills.",
+		"Do not attempt to walk across or through flooded area. the water may be deeper than you think.",
+		"If water gets into your home before you can evacuate, move to a higher floor such as the top floor or your attic.",
+		"Listen to a battery or crank powered radio for the latest updates.",
+		"Turn off all utilities, such as your electricity or gas valve.",
+		"If you come into contact with floodwater, wash your hands with soap and disinfected water.",
+		"Await rescue from your local authorities if you are stuck or stranded."
+		],
       "items": [
         1,
         2,
@@ -424,9 +455,12 @@
     {
       "name": "Limnic Eruption",
       "id": 203,
-      "image": "",
-      "description": "",
-      "tips": [],
+	  "image": "",
+      "description": "Limnic eruptions are one of the rarest natural disasters to ever occur, but they are still dangerous to humans and livestock, so it wouldn't hurt to be prepared. Limnic eruptions occur when CO2 (Carbon Dioxide) is released from deep lake waters, this gas is deadly to both humans and animals, although it is a very rare occurence. Limnic eruptions are so rare that they have only been recorded twice in the past; once in 1984 and then again in 1986, killing around 1,700 people and 3,500 livestock from asphyxiation.",
+      "tips":[
+	    "Move as far away from the source of the eruption as possible.",
+		"Use Oxygen masks to ensure you do not suffocate."
+	  ],
       "items": [
         1,
         2,
@@ -456,9 +490,19 @@
     {
       "name": "Tsunami",
       "id": 204,
-      "image": "",
-      "description": "",
-      "tips": [],
+	  "image": "",
+      "description": "Underwater Earthquakes are often harmless, but in certain circumstances they can cause devastating Tsunami waves, like the one seen on Boxing Day in 2004. Tsunamis occur when the Earths tectonic plates slip under one another, or when they cause a hole in the Earths crust due to moving apart, causing small waves to travel great distances, building up to Tsunami waves, which travel faster than most commercial airplanes. When these waves hit land, they cause massive damage that can be hard to recover from. Although we cannot stop Tsunamis, you can be more prepared, increasing your chances of survival.",
+      "tips":[
+	    "If your area has been hit by Tsunamis in the past, do some research in your local library or using the internet. This will help you find useful information for whee you should go or what you should do if a Tsunami occurs.",
+		"Make a basic survival kit, including things such as non-perishable food, clean water, first-aid kits, medication and important documents. Keep this survival kit in an easy to reach safe place in your home.",
+		"It might be a good idea to have another survival kit in your vehicle as you will then have access to a kit wherever you go.",
+		"Create an evacuation plan for you and your family. By researching Tsunamis you can create a solid evacuation plan for your area in the event of a Tsunami.",
+		"Some of the warning signs of a Tsunami include Earthquakes, rapid rise and fall of coastal waters and animals behaving strangely. By analysing these warnings, you can be more prepared.",
+		"look out for government warnings on the TV or radio and follow their advice.",
+		"In the event of a Tsunami, do not attempt to save personal belongings. These can be replaced, whereas your life cannot.",
+		"Attempt to find high ground. As a last resort, try climbing something tall and sturdy such as a tree or lampost.",
+		"If you get caught up in the water, look for items floating in the water. grab onto these to keep yourself afloat and above water."
+      ],
       "items": [
         1,
         2,
@@ -488,7 +532,7 @@
     {
       "name": "Blzzards",
       "id": 301,
-      "image": "",
+	  "image": "",
       "description": "",
       "tips": [],
       "items": [
@@ -520,7 +564,7 @@
     {
       "name": "Tornados",
       "id": 302,
-      "image": "",
+	  "image": "",
       "description": "",
       "tips": [],
       "items": [
