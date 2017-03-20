@@ -191,7 +191,7 @@ public class DisasterDatabase {
 
                     for (int j = 0; j < itemLocations.length; j++) {
                         // Each disasterItems location needs to be stored
-                        itemLocations[j] = jsonArrayItemLocations.getString(j);
+                        itemLocations[j] = jsonArrayItemLocations.getString(j).toLowerCase();
                     }
 
                     // Create an object from that information
@@ -319,5 +319,15 @@ public class DisasterDatabase {
 
     public DisasterItem getItemFromId(int id) {
         return disasterItems.get(id);
+    }
+
+    public DisasterItem[] getItemsForStore(String store) {
+        ArrayList<DisasterItem> items = new ArrayList<>();
+
+        for (int i = 0; i < disasterItems.size(); i++) {
+            items.add(disasterItems.valueAt(i));
+        }
+
+        return items.toArray(new DisasterItem[items.size()]);
     }
 }

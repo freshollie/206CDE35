@@ -22,4 +22,13 @@
     </android.support.design.widget.AppBarLayout>
 
     <include layout="@layout/content_disaster_items_activity" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_location_searching_white_24dp"
+        android:clickable="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="15dp"
+        android:id="@+id/location_fab" />
 </android.support.design.widget.CoordinatorLayout>

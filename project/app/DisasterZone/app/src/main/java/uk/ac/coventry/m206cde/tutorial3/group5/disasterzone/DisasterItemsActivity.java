@@ -1,7 +1,13 @@
 package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -40,10 +46,33 @@ public class DisasterItemsActivity extends AppCompatActivity {
         }
     }
 
+
+
     public void showMap() {
         DisasterItem[] disasterItems = checkedDisasterItems.toArray(new DisasterItem[checkedDisasterItems.size()]);
-        application.setCurrentDisasterItems(disasterItems);
-        startActivity(new Intent(this, ItemsMapActivity.class));
+        if (disasterItems.length > 0) {
+            if (!application.isNetworkAvailable()) {
+                new AlertDialog.Builder(this)
+                        .setTitle(R.string.no_internet_title)
+                        .setMessage(R.string.no_internet_message)
+                        .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.cancel();
+                            }
+                        })
+                        .show();
+            } else {
+                application.setCurrentDisasterItems(disasterItems);
+                startActivity(new Intent(this, ItemsMapActivity.class));
+            }
+        } else {
+            Snackbar.make(
+                    findViewById(R.id.content_disaster_items_activity),
+                    R.string.no_items_selected,
+                    Snackbar.LENGTH_LONG)
+                    .show();
+        }
     }
 
     public void setupPage() {
@@ -68,7 +97,7 @@ public class DisasterItemsActivity extends AppCompatActivity {
             itemLayout.addView(checkBox);
         }
 
-        findViewById(R.id.view_stores_button).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.location_fab).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showMap();
