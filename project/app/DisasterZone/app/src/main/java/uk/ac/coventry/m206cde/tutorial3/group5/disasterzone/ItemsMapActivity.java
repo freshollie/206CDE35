@@ -370,7 +370,6 @@ public class ItemsMapActivity extends AppCompatActivity implements OnMapReadyCal
                                     Log.v(TAG, "Found no results for: " + query);
                                 } else {
                                     Log.v(TAG, e.getMessage());
-                                    Log.v(TAG, e.getStatusCode());
                                 }
                                 onPlacesFinished();
                             }
