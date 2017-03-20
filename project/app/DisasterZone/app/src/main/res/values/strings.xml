@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Disaster Zone</string>
 
-    <string name="PREFERENCES_KEY">adsfasdfjkj</string>
+    <string name="PREFERENCES_KEY">kjhkjghg</string>
     <string name="SAVED_DATABASE_JSON">saved_database_json</string>
 
     <string name="LAST_PICKED_LOCATION_LAT">last_selected_location_lat</string>
