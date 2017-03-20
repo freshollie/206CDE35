@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/splash_logo"
-        android:text="Welcome to disaster zone"
+        android:text="@string/splash_screen_text"
         android:layout_centerHorizontal="true"
         android:textAppearance="?android:textAppearanceMedium"/>
 

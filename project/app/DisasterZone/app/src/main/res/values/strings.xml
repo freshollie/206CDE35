@@ -22,7 +22,11 @@
     <string name="title_activity_disasters">Disasters</string>
     <string name="no_items_selected">No items selected</string>
     <string name="set_location">Set Location</string>
+
     <string name="no_internet_message">The internet needs to be available to find stores for items</string>
     <string name="no_internet_title">No internet</string>
+
     <string name="ok">Ok</string>
+    <string name="splash_screen_text"><u>Welcome</u> \nThe number one app to help you stay safe in the event of a disaster</string>
+    <string name="title_activity_help">HelpActivity</string>
 </resources>
