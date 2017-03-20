@@ -29,4 +29,8 @@ public class DisasterItem {
     public String getPrice() {
         return price;
     }
+
+    public String[] getLocationNames() {
+        return locations;
+    }
 }

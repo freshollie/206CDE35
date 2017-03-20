@@ -4,6 +4,9 @@
     <string name="PREFERENCES_KEY">adsfasdfjkj</string>
     <string name="SAVED_DATABASE_JSON">saved_database_json</string>
 
+    <string name="LAST_PICKED_LOCATION_LAT">last_selected_location_lat</string>
+    <string name="LAST_PICKED_LOCATION_LONG">last_selected_location_long</string>
+
     <string name="loading_database">Loading Database…</string>
 
     <string name="title_activity_disaster_information">DisasterInformationActivity</string>
@@ -14,7 +17,12 @@
 
     <string name="view_items_button_text">View Survival Essentials</string>
     <string name="title_activity_disaster_items_activity">DisasterItemsActivity</string>
-    <string name="title_activity_item_map">Map</string>
+    <string name="title_activity_item_map">Item Map</string>
     <string name="title_activity_categories">Disaster Zone - Pick a category</string>
     <string name="title_activity_disasters">Disasters</string>
+    <string name="no_items_selected">No items selected</string>
+    <string name="set_location">Set Location</string>
+    <string name="no_internet_message">The internet needs to be available to find stores for items</string>
+    <string name="no_internet_title">No internet</string>
+    <string name="ok">Ok</string>
 </resources>

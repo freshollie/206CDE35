@@ -36,6 +36,7 @@ public class DisasterInformationActivity extends AppCompatActivity {
 
         if (disaster == null) { // No reason to be here
             application.goHome();
+            finish();
         } else {
             setupPage();
         }
@@ -48,6 +49,8 @@ public class DisasterInformationActivity extends AppCompatActivity {
 
     public void setupPage() {
         getSupportActionBar().setTitle(disaster.getName());
+
+        ((ImageView) findViewById(R.id.disaster_information_image)).setImageResource(0);
 
         String stringResId = disaster.getImageResource();
         if (!stringResId.isEmpty()) {

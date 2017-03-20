@@ -3,6 +3,8 @@ package uk.ac.coventry.m206cde.tutorial3.group5.disasterzone;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 
 import java.lang.reflect.Field;
 
@@ -79,5 +81,12 @@ public class DisasterZoneApplication extends Application{
 
     public static int getRawIdFromString(Context context, String resName) {
         return context.getResources().getIdentifier(resName, "raw", context.getPackageName());
+    }
+
+    public boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
     }
 }
