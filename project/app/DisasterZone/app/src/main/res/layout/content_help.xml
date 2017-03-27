@@ -8,6 +8,13 @@
     tools:context="uk.ac.coventry.m206cde.tutorial3.group5.disasterzone.HelpActivity"
     tools:showIn="@layout/activity_help">
 
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:text="Welcome. Click on a category to get started, all disasters are listed per category, and each disaster has its own infromation and survival kit."
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_alignParentStart="true"/>
 
 </RelativeLayout>
