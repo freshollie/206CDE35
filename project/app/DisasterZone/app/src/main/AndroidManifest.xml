@@ -39,7 +39,7 @@
             android:parentActivityName=".DisasterListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DisasterListActivity" />
+                android:value=".DisasterCategoriesActivity" />
         </activity>
         <activity
             android:name=".DisasterInformationActivity"
@@ -78,7 +78,11 @@
         <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisasterCategoriesActivity" />
+        </activity>
     </application>
 
 </manifest>

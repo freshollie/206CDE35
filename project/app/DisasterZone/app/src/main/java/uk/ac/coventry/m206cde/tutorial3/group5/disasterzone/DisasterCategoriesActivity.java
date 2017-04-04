@@ -9,6 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 
 public class DisasterCategoriesActivity extends AppCompatActivity implements DisasterDatabase.DatabaseChangeListener {
     private DisasterZoneApplication application;
@@ -34,6 +35,18 @@ public class DisasterCategoriesActivity extends AppCompatActivity implements Dis
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.categories_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.action_help:
+                startActivity(new Intent(this, HelpActivity.class));
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     private void setupPage() {
