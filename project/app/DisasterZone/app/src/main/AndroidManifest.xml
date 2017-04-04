@@ -35,24 +35,21 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".DisasterListActivity"
-            android:parentActivityName=".DisasterListActivity">
+            android:name=".DisasterListActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".DisasterListActivity" />
+                android:value=".DisasterCategoriesActivity" />
         </activity>
         <activity
             android:name=".DisasterInformationActivity"
-            android:label="@string/title_activity_disaster_information"
-            android:parentActivityName=".DisasterListActivity">
+            android:label="@string/title_activity_disaster_information">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DisasterListActivity" />
         </activity>
         <activity
             android:name=".DisasterItemsActivity"
-            android:label="@string/title_activity_disaster_items_activity"
-            android:parentActivityName=".DisasterInformationActivity">
+            android:label="@string/title_activity_disaster_items_activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".DisasterInformationActivity" />
@@ -78,7 +75,11 @@
         <activity
             android:name=".HelpActivity"
             android:label="@string/title_activity_help"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".DisasterCategoriesActivity" />
+        </activity>
     </application>
 
 </manifest>
