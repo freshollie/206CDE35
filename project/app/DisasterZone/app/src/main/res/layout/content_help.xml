@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="uk.ac.coventry.m206cde.tutorial3.group5.disasterzone.HelpActivity"
-    tools:showIn="@layout/activity_help">
+    tools:showIn="@layout/activity_help"
+    android:layout_margin="@dimen/activity_horizontal_margin">
 
     <TextView
         android:layout_width="match_parent"
